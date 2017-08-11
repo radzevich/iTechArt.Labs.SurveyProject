@@ -1,0 +1,5 @@
+packages/*
+.vs/
+SinglePageApp/bin/*
+SinglePageApp/obj/*
+SinglePageApp/*.*

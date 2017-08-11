@@ -1,0 +1,87 @@
+﻿@using System.Diagnostics.Eventing.Reader
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/fonts/fonts.css" rel="stylesheet" type="text/css"/>
+    <link href="~/Content/styles/body/body.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/styles/body/account-form.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/styles/body/body-content.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/styles/header/header.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/styles/footer/footer.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body class="body">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">
+                    <img class="site-logo" alt="Unicorncoders logo" src="~/Content/img/logo.png"> 
+                </a>
+                <button class="navbar-toggle collapsed" aria-expanded="false" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        @Html.ActionLink("Главная", "Index", "Home")
+                    </li>
+                    @if (Session["UserStatus"] != null && Session["UserStatus"].Equals("admin"))
+                    {
+                        <li>
+                            @Html.ActionLink("Пользователи", "Index", "Account")
+                        </li>
+                    }
+                    <li>
+                        @Html.ActionLink("О компании", "#", "#")
+                    </li>
+                    @if (Session["AuthenticationHash"] == null)
+                    {
+                        <li>
+                            <!--<span class="glyphicon glyphicon-log-in"> </span>-->
+                            @Html.ActionLink("Войти", "Login", "Account")
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <!--<span class="glyphicon glyphicon-user"> </span>-->
+                                <span class="navbar__text"> Привет, @Session["UserName"]!</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>@Html.ActionLink("Профиль", "#", "#")</li>
+                                <li>@Html.ActionLink("Мои опросы", "#", "#")</li>
+                                <li>@Html.ActionLink("Помощь", "#", "#")</li>
+                                <li><hr/></li>
+                                <li>@Html.ActionLink("Выйти", "Logout", "Account")</li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>    
+    </nav>
+
+<div class="container">
+    <div class="body-content">
+        @RenderBody()
+    </div>
+    <footer>
+        <p class="text-center">Copyright &copy; 2017 iTechArt</p>
+    </footer>
+</div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
