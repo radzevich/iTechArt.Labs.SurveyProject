@@ -1,0 +1,13 @@
+body,
+html {
+    height: 100%
+}
+
+.body {
+    font-family: 'ComicRelief'; 
+    color: #000000;
+}
+
+.body .dropdown-menu hr {
+    margin: 0;
+}

@@ -1,5 +1,11 @@
 packages/*
 .vs/
-SinglePageApp/bin/*
-SinglePageApp/obj/*
-SinglePageApp/*.*
+SurveyApp/bin/*
+SurveyApp/obj/*
+SurveyApp/*.*
+SurveyApp.Domain/bin/*
+SurveyApp.Domain/obj/*
+SurveyApp.Domain/*.*
+SurveyApp.Infrastructure/bin/*
+SurveyApp.Infrastructure/obj/*
+SurveyApp.Infrastructure/*.*
