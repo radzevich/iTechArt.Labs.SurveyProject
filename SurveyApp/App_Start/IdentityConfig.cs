@@ -6,7 +6,6 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using SurveyApp.Infrastructure.DataContext;
 using SurveyApp.Models;
 using SurveyApp.Validators;
 

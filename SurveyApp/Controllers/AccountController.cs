@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using SurveyApp.Models;
@@ -50,11 +51,12 @@ namespace SurveyApp.Controllers
             }
         }
 
-        //
-        // GET: /Account
-        public ActionResult Index()
+        public RoleManager<IdentityRole> RoleManager
         {
-            return View(UserManager.Users);
+            get
+            {
+                return new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ApplicationDbContext()));
+            }
         }
 
         //
@@ -172,6 +174,10 @@ namespace SurveyApp.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    var role = new IdentityRole("user");
+
+                    await RoleManager.CreateAsync(role);
+                    await UserManager.AddToRoleAsync(user.Id, "user");
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
@@ -439,7 +445,7 @@ namespace SurveyApp.Controllers
         }
 
         #region RUD
- /*
+
         [HttpGet]
         public ActionResult Delete()
         {
@@ -456,7 +462,7 @@ namespace SurveyApp.Controllers
                 IdentityResult result = await UserManager.DeleteAsync(user);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Logout", "Account");
+                    return RedirectToAction("LogOff", "Account");
                 }
             }
             return RedirectToAction("Index", "Home");
@@ -467,7 +473,11 @@ namespace SurveyApp.Controllers
             ApplicationUser user = await UserManager.FindByEmailAsync(User.Identity.Name);
             if (user != null)
             {
-                EditModel model = new EditModel { Year = user.Year };
+                EditModel model = new EditModel
+                {
+                    Name = user.Name,
+                    Registrated = user.Registrated,
+                };
                 return View(model);
             }
             return RedirectToAction("Login", "Account");
@@ -479,7 +489,9 @@ namespace SurveyApp.Controllers
             ApplicationUser user = await UserManager.FindByEmailAsync(User.Identity.Name);
             if (user != null)
             {
-                user.Year = model.Year;
+                user.Name = model.Name;
+                user.Registrated = user.Registrated;
+
                 IdentityResult result = await UserManager.UpdateAsync(user);
                 if (result.Succeeded)
                 {
@@ -497,7 +509,7 @@ namespace SurveyApp.Controllers
 
             return View(model);
         }
-        */
+
         #endregion
 
         #region Helpers
