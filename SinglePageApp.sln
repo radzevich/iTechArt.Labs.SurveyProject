@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyApp.Domain", "SurveyApp.Domain\SurveyApp.Domain.csproj", "{F71B7AA5-5CCF-49AB-BC0A-A44B8236EC33}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyApp.BLL", "SurveyApp.Domain\SurveyApp.BLL.csproj", "{F71B7AA5-5CCF-49AB-BC0A-A44B8236EC33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyApp.Infrastructure", "SurveyApp.Infrastructure\SurveyApp.Infrastructure.csproj", "{89EB9BAF-1C29-45A0-BE5D-6862352AC646}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyApp.DAL", "SurveyApp.Infrastructure\SurveyApp.DAL.csproj", "{89EB9BAF-1C29-45A0-BE5D-6862352AC646}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyApp", "SurveyApp\SurveyApp.csproj", "{3AA11CCE-C961-46A2-BD13-F6211B79BF64}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyApp.WEB", "SurveyApp\SurveyApp.WEB.csproj", "{3AA11CCE-C961-46A2-BD13-F6211B79BF64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
