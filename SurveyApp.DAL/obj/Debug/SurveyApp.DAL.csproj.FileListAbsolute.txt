@@ -1,0 +1,14 @@
+D:\Project\SinglePageApp\SurveyApp.DAL\bin\Debug\SurveyApp.DAL.dll.config
+D:\Project\SinglePageApp\SurveyApp.DAL\bin\Debug\SurveyApp.DAL.dll
+D:\Project\SinglePageApp\SurveyApp.DAL\bin\Debug\SurveyApp.DAL.pdb
+D:\Project\SinglePageApp\SurveyApp.DAL\bin\Debug\EntityFramework.dll
+D:\Project\SinglePageApp\SurveyApp.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\SinglePageApp\SurveyApp.DAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Project\SinglePageApp\SurveyApp.DAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Project\SinglePageApp\SurveyApp.DAL\bin\Debug\EntityFramework.xml
+D:\Project\SinglePageApp\SurveyApp.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\SinglePageApp\SurveyApp.DAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Project\SinglePageApp\SurveyApp.DAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Project\SinglePageApp\SurveyApp.DAL\obj\Debug\SurveyApp.DAL.csprojResolveAssemblyReference.cache
+D:\Project\SinglePageApp\SurveyApp.DAL\obj\Debug\SurveyApp.DAL.dll
+D:\Project\SinglePageApp\SurveyApp.DAL\obj\Debug\SurveyApp.DAL.pdb
