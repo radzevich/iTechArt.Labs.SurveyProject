@@ -26,9 +26,9 @@ namespace SurveyApp.DAL.Repositories
 
         #endregion
 
-        public UnitOfWork()
+        public UnitOfWork(string connectionString)
         {
-            _context = new ApplicationContext();
+            _context = new ApplicationContext(connectionString);
 
             _userManager = new ApplicationUserManager(new UserStore<ApplicationUser>(_context));
             _roleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(_context));

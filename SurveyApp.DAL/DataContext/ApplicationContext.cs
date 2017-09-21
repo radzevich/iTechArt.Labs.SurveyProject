@@ -6,18 +6,12 @@ namespace SurveyApp.DAL.DataContext
 {
     public class ApplicationContext : IdentityDbContext<ApplicationUser>
     {
-        private const string ConnectingString = "SurveyContext";
-
         static ApplicationContext()
         {
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ApplicationContext>()); 
         }
 
         public ApplicationContext(string conectionString) : base(conectionString)
-        {
-        }
-
-        public ApplicationContext() : this(ConnectingString)
         {
         }
 
