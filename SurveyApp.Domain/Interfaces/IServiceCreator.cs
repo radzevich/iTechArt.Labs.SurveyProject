@@ -1,4 +1,6 @@
-﻿namespace SurveyApp.Domain.Interfaces
+﻿using Microsoft.AspNet.Identity;
+
+namespace SurveyApp.BLL.Interfaces
 {
     public interface IServiceCreator
     {

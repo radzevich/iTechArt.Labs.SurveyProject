@@ -46,21 +46,13 @@ namespace SurveyApp.DAL.Repositories
         #region RepositoryGetters
 
         public ApplicationUserManager UserManager => _userManager;
-
         public ApplicationRoleManager RoleManager => _roleManager;
-
         public IUserProfileManager UserProfileManager => _userProfileManager;
-
         public IRepository<Survey> Surveys => _surveys;
-
         public IRepository<CompletedSurvey> CompletedSurveys => _completedSurveys;
-
         public IRepository<Question> Questions => _questions;
-
         public IRepository<Page> Pages => _pages;
-
         public IRepository<AnswerOption> AnswerOptions => _answerOptions;
-
         public IRepository<ReceivedAnswer> ReceivedAnswers => _receivedAnswers;
 
         #endregion

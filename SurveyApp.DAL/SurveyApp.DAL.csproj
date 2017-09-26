@@ -42,6 +42,28 @@
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -53,6 +75,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infrastructure\ApplicationContextFactory.cs" />
+    <Compile Include="Migrations\201708151405174_InitialCreate.cs" />
+    <Compile Include="Migrations\201708151405174_InitialCreate.Designer.cs">
+      <DependentUpon>201708151405174_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708151628110_CreationMigration.cs" />
+    <Compile Include="Migrations\201708151628110_CreationMigration.Designer.cs">
+      <DependentUpon>201708151628110_CreationMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708151848330_ClaimPropierty.cs" />
+    <Compile Include="Migrations\201708151848330_ClaimPropierty.Designer.cs">
+      <DependentUpon>201708151848330_ClaimPropierty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708161035248_Roles added.cs" />
+    <Compile Include="Migrations\201708161035248_Roles added.Designer.cs">
+      <DependentUpon>201708161035248_Roles added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708161038007_RoleId removed.cs" />
+    <Compile Include="Migrations\201708161038007_RoleId removed.Designer.cs">
+      <DependentUpon>201708161038007_RoleId removed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708161232346_Roles were added.cs" />
+    <Compile Include="Migrations\201708161232346_Roles were added.Designer.cs">
+      <DependentUpon>201708161232346_Roles were added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708161243375_DbInitializerChanged.cs" />
+    <Compile Include="Migrations\201708161243375_DbInitializerChanged.Designer.cs">
+      <DependentUpon>201708161243375_DbInitializerChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708161256130_Test.cs" />
+    <Compile Include="Migrations\201708161256130_Test.Designer.cs">
+      <DependentUpon>201708161256130_Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709261052570_Identity user and user profile are mixed together.cs" />
+    <Compile Include="Migrations\201709261052570_Identity user and user profile are mixed together.Designer.cs">
+      <DependentUpon>201709261052570_Identity user and user profile are mixed together.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709261253576_IdFieldWassAddedToUserProfileTable.cs" />
+    <Compile Include="Migrations\201709261253576_IdFieldWassAddedToUserProfileTable.Designer.cs">
+      <DependentUpon>201709261253576_IdFieldWassAddedToUserProfileTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709261258432_IdWasRenamedInUserProfileTable.cs" />
+    <Compile Include="Migrations\201709261258432_IdWasRenamedInUserProfileTable.Designer.cs">
+      <DependentUpon>201709261258432_IdWasRenamedInUserProfileTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709261300355_NameWasRenamedToIdInUserProfileTable.cs" />
+    <Compile Include="Migrations\201709261300355_NameWasRenamedToIdInUserProfileTable.Designer.cs">
+      <DependentUpon>201709261300355_NameWasRenamedToIdInUserProfileTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709261301559_TempId1WasRenamedToNameInUserProfileTable.cs" />
+    <Compile Include="Migrations\201709261301559_TempId1WasRenamedToNameInUserProfileTable.Designer.cs">
+      <DependentUpon>201709261301559_TempId1WasRenamedToNameInUserProfileTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\UnitOfWork.cs" />
     <Compile Include="DataContext\ApplicationContext.cs" />
@@ -80,6 +156,47 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708151405174_InitialCreate.resx">
+      <DependentUpon>201708151405174_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708151628110_CreationMigration.resx">
+      <DependentUpon>201708151628110_CreationMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708151848330_ClaimPropierty.resx">
+      <DependentUpon>201708151848330_ClaimPropierty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708161035248_Roles added.resx">
+      <DependentUpon>201708161035248_Roles added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708161038007_RoleId removed.resx">
+      <DependentUpon>201708161038007_RoleId removed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708161232346_Roles were added.resx">
+      <DependentUpon>201708161232346_Roles were added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708161243375_DbInitializerChanged.resx">
+      <DependentUpon>201708161243375_DbInitializerChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708161256130_Test.resx">
+      <DependentUpon>201708161256130_Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709261052570_Identity user and user profile are mixed together.resx">
+      <DependentUpon>201709261052570_Identity user and user profile are mixed together.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709261253576_IdFieldWassAddedToUserProfileTable.resx">
+      <DependentUpon>201709261253576_IdFieldWassAddedToUserProfileTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709261258432_IdWasRenamedInUserProfileTable.resx">
+      <DependentUpon>201709261258432_IdWasRenamedInUserProfileTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709261300355_NameWasRenamedToIdInUserProfileTable.resx">
+      <DependentUpon>201709261300355_NameWasRenamedToIdInUserProfileTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709261301559_TempId1WasRenamedToNameInUserProfileTable.resx">
+      <DependentUpon>201709261301559_TempId1WasRenamedToNameInUserProfileTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

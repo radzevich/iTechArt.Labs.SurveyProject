@@ -4,5 +4,12 @@ namespace SurveyApp.DAL.EntityModels
 {
     public class ApplicationRole : IdentityRole
     {
+        public ApplicationRole()
+        {
+        }
+
+        public ApplicationRole(string roleName) : base(roleName)
+        {
+        }
     }
 }

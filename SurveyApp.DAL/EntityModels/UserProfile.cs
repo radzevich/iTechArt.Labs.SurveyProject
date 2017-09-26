@@ -1,14 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace SurveyApp.DAL.EntityModels
 {
-    public class UserProfile : IdentityUser
+    public class UserProfile
     {
         [Key]
         [ForeignKey("ApplicationUser")]
+        public string Id { get; set; }
+
         public string Name { get; set; }
 
         public virtual ApplicationUser ApplicationUser { get; set; }

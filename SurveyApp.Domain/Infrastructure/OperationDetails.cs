@@ -1,4 +1,4 @@
-﻿namespace SurveyApp.Domain.Infrastructure
+﻿namespace SurveyApp.BLL.Infrastructure
 {
     public class OperationDetails
     {

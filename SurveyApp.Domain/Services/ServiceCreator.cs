@@ -1,14 +1,17 @@
-﻿using SurveyApp.Domain.Interfaces;
-using SurveyApp.Domain.Util;
+﻿using Microsoft.AspNet.Identity;
+using SurveyApp.BLL.Interfaces;
+using SurveyApp.BLL.Util;
+using SurveyApp.DAL.Repositories;
 
-namespace SurveyApp.Domain.Services
+namespace SurveyApp.BLL.Services
 {
     public class ServiceCreator : IServiceCreator
     {
-        public IIdentityUserService CreateIdentityUserService(string connectionString)
+        public virtual IIdentityUserService CreateIdentityUserService(string connectionString)
         {
-            var unitOfWorkCreator = new UnitOfWorkCreator(connectionString);
-            return new IdentityUserService(unitOfWorkCreator.getInstance());
+            //var unitOfWorkCreator = new UnitOfWorkCreator(connectionString);
+            //return new IdentityUserService(unitOfWorkCreator.getInstance());
+            return new IdentityUserService(new UnitOfWork(connectionString));
         }
     }
 }

@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using SurveyApp.Domain.Infrastructure;
-using SurveyApp.Domain.Models;
+using SurveyApp.BLL.Infrastructure;
+using SurveyApp.BLL.Models;
 
-namespace SurveyApp.Domain.Interfaces
+namespace SurveyApp.BLL.Interfaces
 {
     public interface IIdentityUserService : IDisposable
     {
-        Task<OperationDetails> Create(User userDto);
-        Task<ClaimsIdentity> Authenticate(User user);
+        Task<OperationDetails> CreateAsync(User userDataToRegister);
+        Task<ClaimsIdentity> AuthenticateAsync(User userDataToAuthenticate);
     }
 }

@@ -1,7 +1,7 @@
 ﻿using SurveyApp.DAL.Interfaces;
 using SurveyApp.DAL.Repositories;
 
-namespace SurveyApp.Domain.Util
+namespace SurveyApp.BLL.Util
 {
     public class UnitOfWorkCreator
     {
