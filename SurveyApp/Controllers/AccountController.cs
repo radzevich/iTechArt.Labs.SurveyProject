@@ -7,10 +7,12 @@ using System.Security.Claims;
 using SurveyApp.BLL.Infrastructure;
 using SurveyApp.BLL.Interfaces;
 using SurveyApp.BLL.Models;
+using SurveyApp.Filters;
 using SurveyApp.Models;
 
 namespace SurveyApp.Controllers
 {
+    [Authorize]
     public class AccountController : Controller
     {
         private IIdentityUserService UserService
@@ -29,12 +31,20 @@ namespace SurveyApp.Controllers
             }
         }
 
+        [Unauthenticated]
+        [AllowAnonymous]
         public ActionResult Login()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                RedirectToAction("Index", "Home");
+            }
             return View();
         }
 
         [HttpPost]
+        [AllowAnonymous]
+        [Unauthenticated]   
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginViewModel model)
         {
@@ -67,12 +77,16 @@ namespace SurveyApp.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        [AllowAnonymous]
+        [Unauthenticated]
         public ActionResult Register()
         {
             return View();
         }
 
         [HttpPost]
+        [AllowAnonymous]
+        [Unauthenticated]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
