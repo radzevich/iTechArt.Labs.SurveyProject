@@ -63,10 +63,16 @@
     <Compile Include="Infrastructure\OperationDetails.cs" />
     <Compile Include="Interfaces\IIdentityUserService.cs" />
     <Compile Include="Interfaces\IServiceCreator.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Interfaces\ISurveyService.cs" />
+    <Compile Include="Models\common\Answer.cs" />
+    <Compile Include="Models\common\Page.cs" />
+    <Compile Include="Models\common\Question.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\SurveyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IdentityUserService.cs" />
     <Compile Include="Services\ServiceCreator.cs" />
+    <Compile Include="Services\SurveyService.cs" />
     <Compile Include="Util\UnitOfWorkCreator.cs" />
     <Compile Include="Validators\CustomPasswordValidator.cs" />
     <Compile Include="Validators\CustomUserValidator.cs" />

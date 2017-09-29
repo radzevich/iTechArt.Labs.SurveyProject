@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Infrastructure\ApplicationContextFactory.cs" />
+    <Compile Include="Interfaces\ISurveyRepository.cs" />
     <Compile Include="Migrations\201708151405174_InitialCreate.cs" />
     <Compile Include="Migrations\201708151405174_InitialCreate.Designer.cs">
       <DependentUpon>201708151405174_InitialCreate.cs</DependentUpon>
@@ -130,6 +131,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\SurveyRepository.cs" />
     <Compile Include="Repositories\UnitOfWork.cs" />
     <Compile Include="DataContext\ApplicationContext.cs" />
     <Compile Include="EntityModels\AnswerOption.cs" />
@@ -139,7 +141,7 @@
     <Compile Include="EntityModels\Page.cs" />
     <Compile Include="EntityModels\Question.cs" />
     <Compile Include="EntityModels\ReceivedAnswer.cs" />
-    <Compile Include="EntityModels\Survey.cs" />
+    <Compile Include="EntityModels\SurveyDataModel.cs" />
     <Compile Include="EntityModels\UserProfile.cs" />
     <Compile Include="Identity\ApplicationRoleManager.cs" />
     <Compile Include="Identity\ApplicationUserManager.cs" />

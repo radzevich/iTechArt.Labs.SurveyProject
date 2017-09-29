@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SurveyApp.DAL.EntityModels
 {
-    public class Survey
+    public class SurveyDataModel
     {
         public int Id { get; set; }
 
@@ -23,7 +23,7 @@ namespace SurveyApp.DAL.EntityModels
         public virtual UserProfile Creator { get; set; }
         public virtual UserProfile Modifier { get; set; }
 
-        public Survey()
+        public SurveyDataModel()
         {
             Questions = new List<Question>();
             CompletedSurveys =new List<CompletedSurvey>();

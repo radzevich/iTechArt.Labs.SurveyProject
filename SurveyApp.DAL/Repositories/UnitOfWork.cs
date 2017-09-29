@@ -14,15 +14,11 @@ namespace SurveyApp.DAL.Repositories
 
         #region Repositories
 
-        private ApplicationUserManager _userManager;
-        private ApplicationRoleManager _roleManager;
+        private ApplicationUserManager _userManager { get; }
+        private ApplicationRoleManager _roleManager { get; }
+        private SurveyRepository _surveys { get; }
         private IUserProfileManager _userProfileManager { get; }
-        private IRepository<Survey> _surveys { get; }
         private IRepository<CompletedSurvey> _completedSurveys { get; }
-        private IRepository<Question> _questions { get; }
-        private IRepository<Page> _pages { get; }
-        private IRepository<AnswerOption> _answerOptions { get; }
-        private IRepository<ReceivedAnswer> _receivedAnswers { get; }
 
         #endregion
 
@@ -35,12 +31,8 @@ namespace SurveyApp.DAL.Repositories
 
             _userProfileManager = new UserProfileManager(_context);
 
-            _surveys = new Repository<Survey>(_context);
+            _surveys = new SurveyRepository(_context);
             _completedSurveys = new Repository<CompletedSurvey>(_context);
-            _questions = new Repository<Question>(_context);
-            _pages = new Repository<Page>(_context);
-            _answerOptions = new Repository<AnswerOption>(_context);
-            _receivedAnswers = new Repository<ReceivedAnswer>(_context);
         }
 
         #region RepositoryGetters
@@ -48,12 +40,8 @@ namespace SurveyApp.DAL.Repositories
         public ApplicationUserManager UserManager => _userManager;
         public ApplicationRoleManager RoleManager => _roleManager;
         public IUserProfileManager UserProfileManager => _userProfileManager;
-        public IRepository<Survey> Surveys => _surveys;
+        public SurveyRepository Surveys => _surveys;
         public IRepository<CompletedSurvey> CompletedSurveys => _completedSurveys;
-        public IRepository<Question> Questions => _questions;
-        public IRepository<Page> Pages => _pages;
-        public IRepository<AnswerOption> AnswerOptions => _answerOptions;
-        public IRepository<ReceivedAnswer> ReceivedAnswers => _receivedAnswers;
 
         #endregion
 

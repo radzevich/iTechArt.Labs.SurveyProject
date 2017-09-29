@@ -8,7 +8,7 @@ namespace SurveyApp.BLL.Interfaces
 {
     public interface IIdentityUserService : IDisposable
     {
-        Task<OperationDetails> CreateAsync(User userDataToRegister);
-        Task<ClaimsIdentity> AuthenticateAsync(User userDataToAuthenticate);
+        Task<OperationDetails> CreateAsync(UserModel userDataToRegister);
+        Task<ClaimsIdentity> AuthenticateAsync(UserModel userDataToAuthenticate);
     }
 }

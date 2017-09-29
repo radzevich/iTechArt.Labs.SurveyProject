@@ -12,7 +12,7 @@ namespace SurveyApp.DAL.EntityModels
         public DateTime Date { get; set; }
 
         public UserProfile User { get; set; }
-        public Survey Survey { get; set; }
+        public SurveyDataModel Survey { get; set; }
 
         public virtual ICollection<ReceivedAnswer> ReceivedAnswers { get; set; }
 

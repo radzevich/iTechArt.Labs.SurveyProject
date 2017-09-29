@@ -16,7 +16,7 @@ namespace SurveyApp.DAL.DataContext
         }
 
         public DbSet<UserProfile> ClientProfiles { get; set; }
-        public DbSet<Survey> Surveys { get; set; }
+        public DbSet<SurveyDataModel> Surveys { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Page> Pages { get; set; }
         public DbSet<AnswerOption> AnswerOptions { get; set; }
