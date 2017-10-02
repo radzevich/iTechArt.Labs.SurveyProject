@@ -2,6 +2,7 @@
 using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Http;
+using SurveyApp.CrossLayerConfiguration;
 using SurveyApp.WebAPI;
 
 namespace SurveyApp
@@ -15,6 +16,7 @@ namespace SurveyApp
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            CrossLayerConfig.Register();
         }
     }
 }

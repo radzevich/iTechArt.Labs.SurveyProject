@@ -1,4 +1,5 @@
-﻿using SurveyApp.DAL.DataContext;
+﻿using System.Collections.Generic;
+using SurveyApp.DAL.DataContext;
 using SurveyApp.DAL.EntityModels;
 using SurveyApp.DAL.Interfaces;
 
@@ -18,6 +19,11 @@ namespace SurveyApp.DAL.Repositories
         {
             context.Surveys.Add(surveyToCreate);
             context.SaveChanges();
+        }
+
+        public IEnumerable<SurveyDataModel> GetSurveysByCreatorId(string creatorId)
+        {
+            return Get(survey => survey.CreatorId.ToString() == creatorId);
         }
     }
 }

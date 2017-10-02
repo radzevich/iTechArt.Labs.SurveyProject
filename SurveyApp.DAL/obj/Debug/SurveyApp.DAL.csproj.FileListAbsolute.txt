@@ -63,7 +63,6 @@ D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.DAL\bin\Debug\Microsoft
 D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.DAL\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.DAL\bin\Debug\Microsoft.Owin.Security.OAuth.xml
 D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.DAL\bin\Debug\Newtonsoft.Json.xml
-D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.DAL\obj\Debug\SurveyApp.DAL.csprojResolveAssemblyReference.cache
 D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.DAL\obj\Debug\SurveyApp.DAL.Migrations.InitialCreate.resources
 D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.DAL\obj\Debug\SurveyApp.DAL.Migrations.CreationMigration.resources
 D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.DAL\obj\Debug\SurveyApp.DAL.Migrations.ClaimPropierty.resources

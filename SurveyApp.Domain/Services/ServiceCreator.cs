@@ -13,5 +13,10 @@ namespace SurveyApp.BLL.Services
             //return new IdentityUserService(unitOfWorkCreator.getInstance());
             return new IdentityUserService(new UnitOfWork(connectionString));
         }
+
+        public virtual ISurveyService CreateSurveyService(string connectionString)
+        {
+            return new SurveyService(new UnitOfWork(connectionString));
+        }
     }
 }

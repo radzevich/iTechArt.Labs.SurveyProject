@@ -4,6 +4,7 @@ using Microsoft.Owin.Security;
 using Microsoft.AspNet.Identity.Owin;
 using System.Threading.Tasks;
 using System.Security.Claims;
+using Microsoft.AspNet.Identity;
 using SurveyApp.BLL.Infrastructure;
 using SurveyApp.BLL.Interfaces;
 using SurveyApp.BLL.Models;
@@ -90,6 +91,7 @@ namespace SurveyApp.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+            //AuthenticationManager.
             if (ModelState.IsValid)
             {
                 var userToRegister = new UserModel
@@ -115,4 +117,5 @@ namespace SurveyApp.Controllers
             return View(model);
         }
     }
+
 }

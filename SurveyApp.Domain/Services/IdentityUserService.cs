@@ -71,6 +71,12 @@ namespace SurveyApp.BLL.Services
             return claim;
         }
 
+        public string GetUserId()
+        {
+            //_database.UserManager
+            return null;
+        }
+
         public void Dispose()
         {
             _database.Dispose();
