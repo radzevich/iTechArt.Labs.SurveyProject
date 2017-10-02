@@ -67,7 +67,6 @@
     <Compile Include="Configs\AutoMapperProfiles\SurveyProfile.cs" />
     <Compile Include="Infrastructure\OperationDetails.cs" />
     <Compile Include="Interfaces\IIdentityUserService.cs" />
-    <Compile Include="Interfaces\IServiceCreator.cs" />
     <Compile Include="Interfaces\ISurveyService.cs" />
     <Compile Include="Models\common\Answer.cs" />
     <Compile Include="Models\common\Page.cs" />
@@ -76,13 +75,13 @@
     <Compile Include="Models\SurveyServiceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IdentityUserService.cs" />
-    <Compile Include="Services\ServiceCreator.cs" />
     <Compile Include="Services\SurveyService.cs" />
-    <Compile Include="Util\UnitOfWorkCreator.cs" />
     <Compile Include="Validators\CustomPasswordValidator.cs" />
     <Compile Include="Validators\CustomUserValidator.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Util\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SurveyApp.DAL\SurveyApp.DAL.csproj">
       <Project>{89eb9baf-1c29-45a0-be5d-6862352ac646}</Project>

@@ -22,8 +22,9 @@ namespace SurveyApp.DAL.Repositories
 
         #endregion
 
-        public UnitOfWork(string connectionString)
+        public UnitOfWork()
         {
+            string connectionString = "SurveyContext";
             _context = new ApplicationContext(connectionString);
 
             _userManager = new ApplicationUserManager(new UserStore<ApplicationUser>(_context));

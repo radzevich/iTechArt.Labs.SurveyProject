@@ -16,13 +16,7 @@ namespace SurveyApp.Controllers
     [Authorize]
     public class AccountController : Controller
     {
-        private IIdentityUserService UserService
-        {
-            get
-            {
-                return HttpContext.GetOwinContext().GetUserManager<IIdentityUserService>();
-            }
-        }
+        private IIdentityUserService UserService { get; }
 
         private IAuthenticationManager AuthenticationManager
         {
@@ -30,6 +24,11 @@ namespace SurveyApp.Controllers
             {
                 return HttpContext.GetOwinContext().Authentication;
             }
+        }
+
+        public AccountController(IIdentityUserService userService)
+        {
+            UserService = userService;
         }
 
         [Unauthenticated]

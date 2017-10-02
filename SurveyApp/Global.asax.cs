@@ -11,12 +11,12 @@ namespace SurveyApp
     {
         protected void Application_Start()
         {
+            CrossLayerConfig.Register();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            CrossLayerConfig.Register();
         }
     }
 }
