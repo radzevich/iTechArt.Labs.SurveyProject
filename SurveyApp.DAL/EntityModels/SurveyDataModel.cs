@@ -15,8 +15,9 @@ namespace SurveyApp.DAL.EntityModels
         public DateTime CreationTime { get; set; } 
 
         public string ModifierId { get; set; }
-        public DateTime ModificationTime { get; set; }   
+        public DateTime ModificationTime { get; set; }
 
+        public virtual ICollection<PageDataModel> Pages { get; set; }
         public virtual ICollection<QuestionDataModel> Questions { get; set; }
         public virtual ICollection<CompletedSurvey> CompletedSurveys { get; set; }
 
@@ -25,6 +26,7 @@ namespace SurveyApp.DAL.EntityModels
 
         public SurveyDataModel()
         {
+            Pages = new List<PageDataModel>();
             Questions = new List<QuestionDataModel>();
             CompletedSurveys =new List<CompletedSurvey>();
         }

@@ -15,6 +15,7 @@ namespace SurveyApp.DAL.EntityModels
         public string Text { get; set; }
 
         public int? SurveyId { get; set; }
+        public int? PageId { get; set; }
 
         public virtual ICollection<AnswerDataModel> AnswerOptions { get; set; }
         public virtual ICollection<ReceivedAnswer> ReceivedAnswers { get; set; }

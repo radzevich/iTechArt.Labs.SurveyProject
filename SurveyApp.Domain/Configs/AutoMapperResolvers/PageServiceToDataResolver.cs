@@ -18,6 +18,13 @@ namespace SurveyApp.BLL.Configs.AutoMapperResolvers
         {
             var page = context.Mapper.Map<PageDataModel>(source);
 
+            page.Survey = _survey;
+
+            foreach (var question in source.Questions)
+            {
+                
+            }
+
             return null;
         }
     }

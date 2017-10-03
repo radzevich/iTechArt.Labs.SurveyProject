@@ -84,3 +84,5 @@ D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.DAL\obj\Debug\SurveyApp
 D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.DAL\obj\Debug\SurveyApp.DAL.Migrations.UserProfileRenamedToProfileInApplicationUserTable.resources
 D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.DAL\obj\Debug\SurveyApp.DAL.csprojResolveAssemblyReference.cache
 D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.DAL\obj\Debug\SurveyApp.DAL.Migrations.SomeEntityodelsWereRenamed.resources
+D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.DAL\obj\Debug\SurveyApp.DAL.Migrations.PageIdColumnWasAddedInQuestionTable.resources
+D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.DAL\obj\Debug\SurveyApp.DAL.Migrations.OneToManyDependencyWasEstablishedBetweenSurveyAndPageEntities.resources

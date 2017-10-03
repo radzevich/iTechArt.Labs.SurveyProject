@@ -2,7 +2,6 @@
 using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Http;
-using SurveyApp.CrossLayerConfiguration;
 using SurveyApp.WebAPI;
 
 namespace SurveyApp
@@ -11,7 +10,8 @@ namespace SurveyApp
     {
         protected void Application_Start()
         {
-            CrossLayerConfig.Register();
+            AutoMapperConfig.Register();
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             GlobalConfiguration.Configure(WebApiConfig.Register);

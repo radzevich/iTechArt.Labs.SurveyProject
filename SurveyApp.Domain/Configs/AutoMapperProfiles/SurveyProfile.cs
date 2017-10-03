@@ -18,8 +18,8 @@ namespace SurveyApp.BLL.Configs.AutoMapperProfiles
             CreateMap<PageServiceModel, PageDataModel>();
             CreateMap<PageDataModel, PageServiceModel>();
 
-            CreateMap<SurveyDataModel, CreateSurveyServiceModel>(MemberList.None);
-            CreateMap<CreateSurveyServiceModel, SurveyDataModel>();
+            CreateMap<SurveyDataModel, CreatedSurveyServiceModel>(MemberList.None);
+            CreateMap<CreatedSurveyServiceModel, SurveyDataModel>();
         }
     }
 }

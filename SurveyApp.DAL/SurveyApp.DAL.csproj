@@ -145,6 +145,14 @@
     <Compile Include="Migrations\201710030811172_SomeEntityodelsWereRenamed.Designer.cs">
       <DependentUpon>201710030811172_SomeEntityodelsWereRenamed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710030948066_PageIdColumnWasAddedInQuestionTable.cs" />
+    <Compile Include="Migrations\201710030948066_PageIdColumnWasAddedInQuestionTable.Designer.cs">
+      <DependentUpon>201710030948066_PageIdColumnWasAddedInQuestionTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710030951276_OneToManyDependencyWasEstablishedBetweenSurveyAndPageEntities.cs" />
+    <Compile Include="Migrations\201710030951276_OneToManyDependencyWasEstablishedBetweenSurveyAndPageEntities.Designer.cs">
+      <DependentUpon>201710030951276_OneToManyDependencyWasEstablishedBetweenSurveyAndPageEntities.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\SurveyRepository.cs" />
@@ -226,6 +234,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710030811172_SomeEntityodelsWereRenamed.resx">
       <DependentUpon>201710030811172_SomeEntityodelsWereRenamed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710030948066_PageIdColumnWasAddedInQuestionTable.resx">
+      <DependentUpon>201710030948066_PageIdColumnWasAddedInQuestionTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710030951276_OneToManyDependencyWasEstablishedBetweenSurveyAndPageEntities.resx">
+      <DependentUpon>201710030951276_OneToManyDependencyWasEstablishedBetweenSurveyAndPageEntities.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

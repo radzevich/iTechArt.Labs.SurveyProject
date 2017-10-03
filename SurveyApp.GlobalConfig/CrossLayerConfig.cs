@@ -6,7 +6,7 @@ namespace SurveyApp.CrossLayerConfiguration
     {
         public static void Register()
         {
-            AutoMapperBLLConfiguration.Configure();
+            
         }
     }
 }

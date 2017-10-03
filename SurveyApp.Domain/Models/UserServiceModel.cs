@@ -11,6 +11,6 @@ namespace SurveyApp.BLL.Models
         public string Name { get; set; }
         public string Role { get; set; }
 
-        public CreateSurveyServiceModel[] CreatedSurveys { get; set; }
+        public CreatedSurveyServiceModel[] CreatedSurveys { get; set; }
     }
 }

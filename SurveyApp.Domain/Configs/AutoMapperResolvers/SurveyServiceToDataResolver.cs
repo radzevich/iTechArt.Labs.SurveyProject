@@ -8,7 +8,7 @@ using SurveyApp.DAL.Interfaces;
 
 namespace SurveyApp.BLL.Configs.AutoMapperResolvers
 {
-    public class SurveyServiceToDataResolver : IValueResolver<CreateSurveyServiceModel, SurveyDataModel, bool>
+    public class SurveyServiceToDataResolver : IValueResolver<CreatedSurveyServiceModel, SurveyDataModel, bool>
     {
         private readonly UserProfile _creator;
         private readonly IUnitOfWork _dbContext;
@@ -19,7 +19,7 @@ namespace SurveyApp.BLL.Configs.AutoMapperResolvers
             _dbContext = dbContext;
         }
 
-        public bool Resolve(CreateSurveyServiceModel source, SurveyDataModel destination, bool destMember,
+        public bool Resolve(CreatedSurveyServiceModel source, SurveyDataModel destination, bool destMember,
             ResolutionContext context)
         {
             var surveyDataModel = context.Mapper.Map<SurveyDataModel>(source);

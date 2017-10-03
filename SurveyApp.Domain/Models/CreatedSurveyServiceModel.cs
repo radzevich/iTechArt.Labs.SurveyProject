@@ -3,7 +3,7 @@ using SurveyApp.BLL.Models.common;
 
 namespace SurveyApp.BLL.Models
 {
-    public class CreateSurveyServiceModel
+    public class CreatedSurveyServiceModel
     {
         public string Title { get; set; }
 
