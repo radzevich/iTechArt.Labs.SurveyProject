@@ -14,36 +14,39 @@ namespace SurveyApp.DAL.Repositories
 
         private readonly ApplicationContext _context;
 
-        #region Repositories
-
-        private ApplicationUserManager _userManager { get; }
-        private ApplicationRoleManager _roleManager { get; }
-        private SurveyRepository _surveys { get; }
-        private IUserProfileManager _userProfileManager { get; }
-        private IRepository<CompletedSurvey> _completedSurveys { get; }
-
-        #endregion
-
         public UnitOfWork()
         {
             _context = new ApplicationContext(ConnectionString);
 
-            _userManager = new ApplicationUserManager(new UserStore<ApplicationUser>(_context));
-            _roleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(_context));
+            UserManager = new ApplicationUserManager(new UserStore<ApplicationUser>(_context));
+            RoleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(_context));
 
-            _userProfileManager = new UserProfileManager(_context);
+            UserProfileManager = new UserProfileManager(_context);
 
-            _surveys = new SurveyRepository(_context);
-            _completedSurveys = new Repository<CompletedSurvey>(_context);
+            Surveys = new SurveyRepository(_context);
+            CompletedSurveys = new Repository<CompletedSurvey>(_context);
+            Pages = new Repository<PageDataModel>(_context);
+            Questions = new Repository<QuestionDataModel>(_context);
+            Answers = new Repository<AnswerDataModel>(_context);
         }
 
         #region RepositoryGetters
 
-        public ApplicationUserManager UserManager => _userManager;
-        public ApplicationRoleManager RoleManager => _roleManager;
-        public IUserProfileManager UserProfileManager => _userProfileManager;
-        public SurveyRepository Surveys => _surveys;
-        public IRepository<CompletedSurvey> CompletedSurveys => _completedSurveys;
+        public ApplicationUserManager UserManager { get; }
+
+        public ApplicationRoleManager RoleManager { get; }
+
+        public IUserProfileManager UserProfileManager { get; }
+
+        public SurveyRepository Surveys { get; }
+
+        public IRepository<CompletedSurvey> CompletedSurveys { get; }
+
+        public IRepository<PageDataModel> Pages { get; }
+
+        public IRepository<QuestionDataModel> Questions { get; }
+
+        public IRepository<AnswerDataModel> Answers { get; }
 
         #endregion
 

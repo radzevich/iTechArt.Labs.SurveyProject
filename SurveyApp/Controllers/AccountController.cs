@@ -50,7 +50,7 @@ namespace SurveyApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userToLogin = new UserModel { Email = model.Email, Password = model.Password };
+                var userToLogin = new UserServiceModel { Email = model.Email, Password = model.Password };
                 ClaimsIdentity claim = await UserService.AuthenticateAsync(userToLogin);
                 if (claim == null)
                 {
@@ -93,7 +93,7 @@ namespace SurveyApp.Controllers
             //AuthenticationManager.
             if (ModelState.IsValid)
             {
-                var userToRegister = new UserModel
+                var userToRegister = new UserServiceModel
                 {
                     Email = model.Email,
                     Password = model.Password,

@@ -65,14 +65,17 @@
   <ItemGroup>
     <Compile Include="Configs\AutoMapperBLLConfiguration.cs" />
     <Compile Include="Configs\AutoMapperProfiles\SurveyProfile.cs" />
-    <Compile Include="Configs\AutoMapperResolvers\SurveyServiceModelToSurveyDataModelResolver.cs" />
+    <Compile Include="Configs\AutoMapperResolvers\AnswerServiceToDataResolver.cs" />
+    <Compile Include="Configs\AutoMapperResolvers\PageServiceToDataResolver.cs" />
+    <Compile Include="Configs\AutoMapperResolvers\QuestionServiceToDataResolver.cs" />
+    <Compile Include="Configs\AutoMapperResolvers\SurveyServiceToDataResolver.cs" />
     <Compile Include="Infrastructure\OperationDetails.cs" />
     <Compile Include="Interfaces\IIdentityUserService.cs" />
     <Compile Include="Interfaces\ISurveyService.cs" />
     <Compile Include="Models\common\AnswerServiceModel.cs" />
     <Compile Include="Models\common\PageServiceModel.cs" />
     <Compile Include="Models\common\QuestionServiceModel.cs" />
-    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\UserServiceModel.cs" />
     <Compile Include="Models\CreateSurveyServiceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\IdentityUserService.cs" />

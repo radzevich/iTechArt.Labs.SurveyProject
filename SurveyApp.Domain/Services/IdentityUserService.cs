@@ -26,7 +26,7 @@ namespace SurveyApp.BLL.Services
             _database = unitOfWork;
         }
 
-        public async Task<OperationDetails> CreateAsync(UserModel userDataToCreate)
+        public async Task<OperationDetails> CreateAsync(UserServiceModel userDataToCreate)
         {
             ApplicationUser user = await _database.UserManager.FindByEmailAsync(userDataToCreate.Email);
             if (user == null)
@@ -60,7 +60,7 @@ namespace SurveyApp.BLL.Services
             return new OperationDetails(false, UserIsAlreadyExistMessageText, PropertyNameEmail);
         }
 
-        public async Task<ClaimsIdentity> AuthenticateAsync(UserModel userToAuthenticate)
+        public async Task<ClaimsIdentity> AuthenticateAsync(UserServiceModel userToAuthenticate)
         {
             ClaimsIdentity claim = null;
             ApplicationUser user = await _database.UserManager.FindAsync(userToAuthenticate.Email, userToAuthenticate.Password);

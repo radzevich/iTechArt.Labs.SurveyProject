@@ -16,6 +16,10 @@ namespace SurveyApp.DAL.Interfaces
         SurveyRepository Surveys { get; }
         IRepository<CompletedSurvey> CompletedSurveys { get; }
 
+        IRepository<PageDataModel> Pages { get; }
+        IRepository<QuestionDataModel> Questions { get; }
+        IRepository<AnswerDataModel> Answers { get; }
+
         void Save();
         Task SaveAsync();
     }

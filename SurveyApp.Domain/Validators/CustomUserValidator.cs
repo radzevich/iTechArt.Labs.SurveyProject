@@ -8,7 +8,7 @@ using SurveyApp.BLL.Models;
 
 namespace SurveyApp.BLL.Validators
 {
-    public class CustomUserValidator : IIdentityValidator<UserModel>
+    public class CustomUserValidator : IIdentityValidator<UserServiceModel>
     {
         private readonly Regex _emailRegex = new Regex(@"^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
         private readonly UserManager<ApplicationUser> _manager;
@@ -22,7 +22,7 @@ namespace SurveyApp.BLL.Validators
             _manager = manager;
         }
 
-        public async Task<IdentityResult> ValidateAsync(UserModel item)
+        public async Task<IdentityResult> ValidateAsync(UserServiceModel item)
         {
             var errors = new List<string>();
             if (!_emailRegex.IsMatch(item.Email))

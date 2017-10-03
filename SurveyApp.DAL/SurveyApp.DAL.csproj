@@ -154,7 +154,7 @@
     <Compile Include="EntityModels\ApplicationRole.cs" />
     <Compile Include="EntityModels\ApplicationUser.cs" />
     <Compile Include="EntityModels\CompletedSurvey.cs" />
-    <Compile Include="EntityModels\Page.cs" />
+    <Compile Include="EntityModels\PageDataModel.cs" />
     <Compile Include="EntityModels\QuestionDataModel.cs" />
     <Compile Include="EntityModels\ReceivedAnswer.cs" />
     <Compile Include="EntityModels\SurveyDataModel.cs" />

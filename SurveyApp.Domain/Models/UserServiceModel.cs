@@ -2,7 +2,7 @@
 
 namespace SurveyApp.BLL.Models
 {
-    public class UserModel
+    public class UserServiceModel
     {
         public string Id { get; set; }
         public string Email { get; set; }
