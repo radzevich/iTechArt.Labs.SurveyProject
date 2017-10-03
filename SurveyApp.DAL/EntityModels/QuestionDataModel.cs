@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SurveyApp.DAL.EntityModels
 {
-    public class Question
+    public class QuestionDataModel
     {
         [Key]
         public int Id { get; set; }
@@ -16,15 +16,15 @@ namespace SurveyApp.DAL.EntityModels
 
         public int? SurveyId { get; set; }
 
-        public virtual ICollection<AnswerOption> AnswerOptions { get; set; }
+        public virtual ICollection<AnswerDataModel> AnswerOptions { get; set; }
         public virtual ICollection<ReceivedAnswer> ReceivedAnswers { get; set; }
 
         public Page Page { get; set; }
         public SurveyDataModel Survey { get; set; }
 
-        public Question()
+        public QuestionDataModel()
         {
-            AnswerOptions = new List<AnswerOption>();
+            AnswerOptions = new List<AnswerDataModel>();
             ReceivedAnswers = new List<ReceivedAnswer>();
         }
     }

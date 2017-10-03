@@ -7,9 +7,9 @@ namespace SurveyApp.BLL.Interfaces
 {
     public interface ISurveyService
     {
-        Task<OperationDetails> CreateAsync(SurveyServiceModel surveyToCreate);
-        Task<OperationDetails> UpdateAsync(SurveyServiceModel updatedSurvey);
+        Task<OperationDetails> CreateAsync(CreateSurveyServiceModel surveyToCreate, string creatorName);
+        Task<OperationDetails> UpdateAsync(CreateSurveyServiceModel updatedSurvey);
         Task<OperationDetails> RemoveAsync(string surveyId, string intiatedByUserId);
-        IEnumerable<SurveyServiceModel> GetSurveysCreatedByUser(string userId);
+        IEnumerable<CreateSurveyServiceModel> GetSurveysCreatedByUser(string userId);
     }
 }

@@ -5,6 +5,6 @@ namespace SurveyApp.DAL.EntityModels
 {
     public class ApplicationUser : IdentityUser 
     {
-        public virtual UserProfile UserProfile { get; set; }
+        public UserProfile Profile { get; set; }
     }
 }

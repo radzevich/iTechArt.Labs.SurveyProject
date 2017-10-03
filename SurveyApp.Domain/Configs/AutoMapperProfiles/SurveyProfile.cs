@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using SurveyApp.BLL.Models;
+using SurveyApp.BLL.Models.common;
 using SurveyApp.DAL.EntityModels;
 
 namespace SurveyApp.BLL.Configs.AutoMapperProfiles
@@ -8,8 +9,10 @@ namespace SurveyApp.BLL.Configs.AutoMapperProfiles
     {
         public SurveyProfile()
         {
-            CreateMap<SurveyDataModel, SurveyServiceModel>();
-            CreateMap<SurveyServiceModel, SurveyDataModel>();
+            CreateMap<AnswerServiceModel, AnswerDataModel>();
+            CreateMap<AnswerDataModel, AnswerServiceModel>();
+            CreateMap<SurveyDataModel, CreateSurveyServiceModel>(MemberList.None);
+            CreateMap<CreateSurveyServiceModel, SurveyDataModel>();
         }
     }
 }

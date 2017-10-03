@@ -2,8 +2,13 @@ packages/*
 .vs/
 SurveyApp/bin/*
 SurveyApp/obj/*
+SurveyApp.DAL/bin/*
+SurveyApp.DAL/obj/*
+SurveyApp.Configuration/bin/*
+SurveyApp.Configuration/obj/*
+SurveyApp.GlobalConfig/bin/*
+SurveyApp.GlobalConfig/obj/*
 SurveyApp.Domain/bin/*
 SurveyApp.Domain/obj/*
-SurveyApp.Infrastructure/bin/*
-SurveyApp.Infrastructure/obj/*
-SurveyApp.Infrastructure/*.*
+SurveyApp.WebAPI/bin/*
+SurveyApp.WebAPI/obj/*

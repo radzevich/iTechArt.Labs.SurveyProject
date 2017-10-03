@@ -9,6 +9,6 @@
         public string Value { get; set; }
   
         public CompletedSurvey CompletedSurvey { get; set; }
-        public Question Question { get; set; }
+        public QuestionDataModel Question { get; set; }
     }
 }

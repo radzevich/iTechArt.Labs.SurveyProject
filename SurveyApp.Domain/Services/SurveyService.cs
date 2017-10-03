@@ -18,6 +18,7 @@ namespace SurveyApp.BLL.Services
 
         private const string AdminRoleName = "admin";
         private const string SurveyNotFoundError = "Survey not found";
+        private const string UserNotFoundError = "User not found";
         private const string PermissionDeniedError = "Permission denied";
 
         public SurveyService(IUnitOfWork unitOfWork)
@@ -25,36 +26,35 @@ namespace SurveyApp.BLL.Services
             _context = unitOfWork;
         }      
 
-        public async Task<OperationDetails> CreateAsync(SurveyServiceModel surveyToCreate)
+        public async Task<OperationDetails> CreateAsync(CreateSurveyServiceModel surveyToCreate, string creatorName)
         {
-            try
+            var surveyDataModel = Mapper.Map<SurveyDataModel>(surveyToCreate);
+            var creatorIdentinity = await _context.UserManager.FindByNameAsync(creatorName);
+            var creatorProfile = creatorIdentinity.Profile;
+
+            if (creatorProfile != null)
             {
-                var surveyDataModel = Mapper.Map<SurveyDataModel>(surveyToCreate);
+                var surveyToCreateDataModel = Mapper.Map<SurveyDataModel>(surveyToCreate);
+                    
+                surveyToCreateDataModel.Creator = creatorProfile;
+                surveyToCreateDataModel.Modifier = creatorProfile;
+                surveyToCreateDataModel.CreationTime = DateTime.Now;
+                surveyToCreateDataModel.ModificationTime = surveyToCreateDataModel.CreationTime;
+
                 _context.Surveys.Create(surveyDataModel);
                 await _context.SaveAsync();
-
-                return new OperationDetails(true, "", "");
             }
-            catch (Exception e)
+            else
             {
-                return new OperationDetails(false, e.Message, "");
-            }               
+                return new OperationDetails(false, UserNotFoundError, "");
+            }
+          
+            return new OperationDetails(true, "", "");             
         }
 
-        public async Task<OperationDetails> UpdateAsync(SurveyServiceModel updatedSurvey)
+        public async Task<OperationDetails> UpdateAsync(CreateSurveyServiceModel updatedSurvey)
         {
-            try
-            {
-                var surveyDataModel = Mapper.Map<SurveyDataModel>(updatedSurvey);
-                _context.Surveys.Update(surveyDataModel);
-                await _context.SaveAsync();
-
-                return new OperationDetails(true, "", "");
-            }
-            catch (Exception e)
-            {
-                return new OperationDetails(false, e.Message, "");
-            }
+            return new OperationDetails(true, "", "");
         }
 
         public async Task<OperationDetails> RemoveAsync(string surveyId, string intiatedByUserId)
@@ -62,8 +62,8 @@ namespace SurveyApp.BLL.Services
             var surveyToDeleteDataModel = _context.Surveys.GetById(surveyId);
             if (surveyToDeleteDataModel != null)
             {
-                var surveyToDeleteServiceModel = Mapper.Map<SurveyServiceModel>(surveyToDeleteDataModel);
-                if (UserIsAbleToDeleteSurvey(surveyToDeleteServiceModel, intiatedByUserId))
+                var surveyToDeleteServiceModel = Mapper.Map<CreateSurveyServiceModel>(surveyToDeleteDataModel);
+                if (UserIsAbleToDeleteSurvey(surveyToDeleteDataModel, intiatedByUserId))
                 {
                     _context.Surveys.Delete(surveyId);
                     await _context.SaveAsync();
@@ -75,16 +75,16 @@ namespace SurveyApp.BLL.Services
             return new OperationDetails(false, SurveyNotFoundError, "");
         }
 
-        public IEnumerable<SurveyServiceModel> GetSurveysCreatedByUser(string userId)
+        public IEnumerable<CreateSurveyServiceModel> GetSurveysCreatedByUser(string userId)
         {
             IEnumerable<SurveyDataModel> userSurveys = _context.Surveys.GetSurveysByCreatorId(userId);
-            return new List<SurveyServiceModel>(
+            return new List<CreateSurveyServiceModel>(
                 from survey in userSurveys
-                select Mapper.Map<SurveyServiceModel>(survey)
+                select Mapper.Map<CreateSurveyServiceModel>(survey)
             );  
         }
 
-        private bool UserIsAbleToDeleteSurvey(SurveyServiceModel surveyToDelete, string userToCheckRightsId)
+        private bool UserIsAbleToDeleteSurvey(SurveyDataModel surveyToDelete, string userToCheckRightsId)
         {
             if (surveyToDelete.CreatorId != userToCheckRightsId)
             {

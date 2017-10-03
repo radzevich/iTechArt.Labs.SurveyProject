@@ -129,17 +129,33 @@
     <Compile Include="Migrations\201709261301559_TempId1WasRenamedToNameInUserProfileTable.Designer.cs">
       <DependentUpon>201709261301559_TempId1WasRenamedToNameInUserProfileTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710021414550_TypeOfIdInSurveyTableChangedToInt.cs" />
+    <Compile Include="Migrations\201710021414550_TypeOfIdInSurveyTableChangedToInt.Designer.cs">
+      <DependentUpon>201710021414550_TypeOfIdInSurveyTableChangedToInt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710021531470_OneToOneLinksInApplicationUserAndUserProfileMakedNotVirtual.cs" />
+    <Compile Include="Migrations\201710021531470_OneToOneLinksInApplicationUserAndUserProfileMakedNotVirtual.Designer.cs">
+      <DependentUpon>201710021531470_OneToOneLinksInApplicationUserAndUserProfileMakedNotVirtual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710021539216_UserProfileRenamedToProfileInApplicationUserTable.cs" />
+    <Compile Include="Migrations\201710021539216_UserProfileRenamedToProfileInApplicationUserTable.Designer.cs">
+      <DependentUpon>201710021539216_UserProfileRenamedToProfileInApplicationUserTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710030811172_SomeEntityodelsWereRenamed.cs" />
+    <Compile Include="Migrations\201710030811172_SomeEntityodelsWereRenamed.Designer.cs">
+      <DependentUpon>201710030811172_SomeEntityodelsWereRenamed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\SurveyRepository.cs" />
     <Compile Include="Repositories\UnitOfWork.cs" />
     <Compile Include="DataContext\ApplicationContext.cs" />
-    <Compile Include="EntityModels\AnswerOption.cs" />
+    <Compile Include="EntityModels\AnswerDataModel.cs" />
     <Compile Include="EntityModels\ApplicationRole.cs" />
     <Compile Include="EntityModels\ApplicationUser.cs" />
     <Compile Include="EntityModels\CompletedSurvey.cs" />
     <Compile Include="EntityModels\Page.cs" />
-    <Compile Include="EntityModels\Question.cs" />
+    <Compile Include="EntityModels\QuestionDataModel.cs" />
     <Compile Include="EntityModels\ReceivedAnswer.cs" />
     <Compile Include="EntityModels\SurveyDataModel.cs" />
     <Compile Include="EntityModels\UserProfile.cs" />
@@ -198,6 +214,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709261301559_TempId1WasRenamedToNameInUserProfileTable.resx">
       <DependentUpon>201709261301559_TempId1WasRenamedToNameInUserProfileTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710021414550_TypeOfIdInSurveyTableChangedToInt.resx">
+      <DependentUpon>201710021414550_TypeOfIdInSurveyTableChangedToInt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710021531470_OneToOneLinksInApplicationUserAndUserProfileMakedNotVirtual.resx">
+      <DependentUpon>201710021531470_OneToOneLinksInApplicationUserAndUserProfileMakedNotVirtual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710021539216_UserProfileRenamedToProfileInApplicationUserTable.resx">
+      <DependentUpon>201710021539216_UserProfileRenamedToProfileInApplicationUserTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710030811172_SomeEntityodelsWereRenamed.resx">
+      <DependentUpon>201710030811172_SomeEntityodelsWereRenamed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

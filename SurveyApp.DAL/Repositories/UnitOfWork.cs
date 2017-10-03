@@ -10,6 +10,8 @@ namespace SurveyApp.DAL.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
+        private const string ConnectionString = "SurveyContext";
+
         private readonly ApplicationContext _context;
 
         #region Repositories
@@ -24,8 +26,7 @@ namespace SurveyApp.DAL.Repositories
 
         public UnitOfWork()
         {
-            string connectionString = "SurveyContext";
-            _context = new ApplicationContext(connectionString);
+            _context = new ApplicationContext(ConnectionString);
 
             _userManager = new ApplicationUserManager(new UserStore<ApplicationUser>(_context));
             _roleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(_context));
