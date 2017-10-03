@@ -3,8 +3,8 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using AutoMapper;
 using SurveyApp.BLL.Infrastructure;
 using SurveyApp.BLL.Interfaces;
@@ -14,6 +14,8 @@ using SurveyApp.WebAPI.Models;
 namespace SurveyApp.WebAPI.Controllers
 {
     [Authorize]
+    [RoutePrefix("api/survey")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class SurveyController : ApiController
     {
         public ISurveyService SurveyService { get; }
@@ -24,6 +26,7 @@ namespace SurveyApp.WebAPI.Controllers
         }
 
         [HttpGet]
+        [Route("getall")]
         public IEnumerable<CreatedSurveyViewModel> GetAllSurveys(string userId)
         {
             string currentUserId = RequestContext.Principal.Identity.Name;
@@ -41,6 +44,7 @@ namespace SurveyApp.WebAPI.Controllers
         }       
 
         [HttpPost]
+        [Route("create")]
         public async Task<HttpResponseMessage> CreateSurvey(CreatedSurveyViewModel surveyToCreateViewModel)
         {
             string currentUserId = RequestContext.Principal.Identity.Name;
@@ -55,6 +59,7 @@ namespace SurveyApp.WebAPI.Controllers
         }
 
         [HttpPost]
+        [Route("update")]
         public async Task<HttpResponseMessage> UpdateSurvey(CreatedSurveyViewModel surveyToUpdateViewModel)
         {
             string currentUserId = RequestContext.Principal.Identity.Name;
@@ -70,6 +75,7 @@ namespace SurveyApp.WebAPI.Controllers
         }
 
         [HttpPost]
+        [Route("delete")]
         public async Task<HttpResponseMessage> DeleteAsync(int surveyToDeleteId)
         {
             string currentUserId = RequestContext.Principal.Identity.Name;

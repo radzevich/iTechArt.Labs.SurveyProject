@@ -54,3 +54,6 @@ D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.WebAPI\bin\EntityFramew
 D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.WebAPI\obj\Debug\SurveyApp.WebAPI.csprojResolveAssemblyReference.cache
 D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.WebAPI\obj\Debug\SurveyApp.WebAPI.dll
 D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.WebAPI\obj\Debug\SurveyApp.WebAPI.pdb
+D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.WebAPI\bin\System.Web.Cors.dll
+D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.WebAPI\bin\System.Web.Http.Cors.dll
+D:\SinglePageAppBE\iTechArt.Labs.SurveyProject\SurveyApp.WebAPI\bin\System.Web.Http.Cors.xml
