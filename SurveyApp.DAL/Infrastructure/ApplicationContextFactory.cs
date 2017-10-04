@@ -7,7 +7,7 @@ namespace SurveyApp.DAL.Infrastructure
     {
         public ApplicationContext Create()
         {
-            return new ApplicationContext("SurveyContext");
+            return ApplicationContext.GetInstance("SurveyContext");
         }
     }
 }

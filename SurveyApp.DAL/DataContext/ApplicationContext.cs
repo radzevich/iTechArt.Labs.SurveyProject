@@ -6,13 +6,20 @@ namespace SurveyApp.DAL.DataContext
 {
     public class ApplicationContext : IdentityDbContext<ApplicationUser>
     {
+        private static ApplicationContext _instance;
+
         static ApplicationContext()
         {
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ApplicationContext>()); 
         }
 
-        public ApplicationContext(string conectionString) : base(conectionString)
+        private ApplicationContext(string conectionString) : base(conectionString)
         {
+        }
+
+        public static ApplicationContext GetInstance(string connectionString)
+        {
+            return _instance ?? (_instance = new ApplicationContext(connectionString));
         }
 
         public DbSet<UserProfile> ClientProfiles { get; set; }

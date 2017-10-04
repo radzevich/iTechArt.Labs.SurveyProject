@@ -16,7 +16,7 @@ namespace SurveyApp.DAL.Repositories
 
         public UnitOfWork()
         {
-            _context = new ApplicationContext(ConnectionString);
+            _context = ApplicationContext.GetInstance(ConnectionString);
 
             UserManager = new ApplicationUserManager(new UserStore<ApplicationUser>(_context));
             RoleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(_context));
