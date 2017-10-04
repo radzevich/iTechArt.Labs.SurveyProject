@@ -2,7 +2,7 @@
 
 namespace SurveyApp.BLL.Models
 {
-    public class UpdatedSurveyServiceModel
+    public class SurveyServiceModel
     {
         public int Id { get; set; }
 

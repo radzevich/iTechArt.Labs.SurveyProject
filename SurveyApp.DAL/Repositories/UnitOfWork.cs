@@ -20,10 +20,10 @@ namespace SurveyApp.DAL.Repositories
 
             UserManager = new ApplicationUserManager(new UserStore<ApplicationUser>(_context));
             RoleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(_context));
-
             UserProfileManager = new UserProfileManager(_context);
 
             Surveys = new SurveyRepository(_context);
+            SurveyTemplates = new SurveyTemplateRepository(_context);
             CompletedSurveys = new Repository<CompletedSurvey>(_context);
             Pages = new Repository<PageDataModel>(_context);
             Questions = new Repository<QuestionDataModel>(_context);
@@ -39,6 +39,8 @@ namespace SurveyApp.DAL.Repositories
         public IUserProfileManager UserProfileManager { get; }
 
         public SurveyRepository Surveys { get; }
+
+        public SurveyTemplateRepository SurveyTemplates { get; set; }
 
         public IRepository<CompletedSurvey> CompletedSurveys { get; }
 

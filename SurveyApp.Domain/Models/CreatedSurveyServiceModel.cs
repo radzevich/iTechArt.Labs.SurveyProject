@@ -7,6 +7,8 @@ namespace SurveyApp.BLL.Models
     {
         public string Title { get; set; }
 
+        public string CreatorId { get; set; }
+
         public bool IsAnonymous { get; set; }
         public bool IsRandomQuestionOrder { get; set; }
         public bool ShowPagesNumbers { get; set; }

@@ -22,5 +22,6 @@ namespace SurveyApp.DAL.DataContext
         public DbSet<AnswerDataModel> AnswerOptions { get; set; }
         public DbSet<ReceivedAnswer> ReceivedAnswers { get; set; }
         public DbSet<CompletedSurvey> CompletedSurveys { get; set; }
+        public DbSet<SurveyTemplateDataModel> SurveyTemplates { get; set; }
     }
 }

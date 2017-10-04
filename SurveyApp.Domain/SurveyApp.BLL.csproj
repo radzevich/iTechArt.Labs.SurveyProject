@@ -75,7 +75,7 @@
     <Compile Include="Models\common\AnswerServiceModel.cs" />
     <Compile Include="Models\common\PageServiceModel.cs" />
     <Compile Include="Models\common\QuestionServiceModel.cs" />
-    <Compile Include="Models\UpdatedSurveyServiceModel.cs" />
+    <Compile Include="Models\SurveyServiceModel.cs" />
     <Compile Include="Models\UserServiceModel.cs" />
     <Compile Include="Models\CreatedSurveyServiceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

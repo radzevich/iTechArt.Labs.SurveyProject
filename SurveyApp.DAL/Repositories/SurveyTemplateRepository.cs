@@ -5,23 +5,22 @@ using SurveyApp.DAL.Interfaces;
 
 namespace SurveyApp.DAL.Repositories
 {
-    public class SurveyRepository : Repository<SurveyDataModel>, ISurveyRepository
+    public class SurveyTemplateRepository : Repository<SurveyTemplateDataModel>, ISurveyTemplateRepository
     {
-
         public ApplicationContext Database { get; set; }
 
-        public SurveyRepository(ApplicationContext context) : base(context)
+        public SurveyTemplateRepository(ApplicationContext context) : base(context)
         {
             Database = context;
         }
 
-        public void Create(SurveyDataModel surveyToCreate)
+        public void Create(SurveyTemplateDataModel surveyTemplateToCreate)
         {
-            context.Surveys.Add(surveyToCreate);
+            context.SurveyTemplates.Add(surveyTemplateToCreate);
             context.SaveChangesAsync();
         }
 
-        public IEnumerable<SurveyDataModel> GetSurveysByCreatorId(string creatorId)
+        public IEnumerable<SurveyTemplateDataModel> GetSurveyTemplatesByCreatorId(string creatorId)
         {
             return Get(survey => survey.CreatorId.ToString() == creatorId);
         }

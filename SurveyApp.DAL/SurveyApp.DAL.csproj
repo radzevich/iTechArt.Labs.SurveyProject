@@ -75,8 +75,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityModels\SurveyTemplateDataModel.cs" />
     <Compile Include="Infrastructure\ApplicationContextFactory.cs" />
     <Compile Include="Interfaces\ISurveyRepository.cs" />
+    <Compile Include="Interfaces\ISurveyTemplateRepository.cs" />
     <Compile Include="Migrations\201708151405174_InitialCreate.cs" />
     <Compile Include="Migrations\201708151405174_InitialCreate.Designer.cs">
       <DependentUpon>201708151405174_InitialCreate.cs</DependentUpon>
@@ -153,9 +155,18 @@
     <Compile Include="Migrations\201710030951276_OneToManyDependencyWasEstablishedBetweenSurveyAndPageEntities.Designer.cs">
       <DependentUpon>201710030951276_OneToManyDependencyWasEstablishedBetweenSurveyAndPageEntities.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710040829127_SurveyTemplatesTableWasAdded.cs" />
+    <Compile Include="Migrations\201710040829127_SurveyTemplatesTableWasAdded.Designer.cs">
+      <DependentUpon>201710040829127_SurveyTemplatesTableWasAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710040831585_SurveyTemplatesColumnWasAddedToUserProfileTable.cs" />
+    <Compile Include="Migrations\201710040831585_SurveyTemplatesColumnWasAddedToUserProfileTable.Designer.cs">
+      <DependentUpon>201710040831585_SurveyTemplatesColumnWasAddedToUserProfileTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\SurveyRepository.cs" />
+    <Compile Include="Repositories\SurveyTemplateRepository.cs" />
     <Compile Include="Repositories\UnitOfWork.cs" />
     <Compile Include="DataContext\ApplicationContext.cs" />
     <Compile Include="EntityModels\AnswerDataModel.cs" />
@@ -240,6 +251,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710030951276_OneToManyDependencyWasEstablishedBetweenSurveyAndPageEntities.resx">
       <DependentUpon>201710030951276_OneToManyDependencyWasEstablishedBetweenSurveyAndPageEntities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710040829127_SurveyTemplatesTableWasAdded.resx">
+      <DependentUpon>201710040829127_SurveyTemplatesTableWasAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710040831585_SurveyTemplatesColumnWasAddedToUserProfileTable.resx">
+      <DependentUpon>201710040831585_SurveyTemplatesColumnWasAddedToUserProfileTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

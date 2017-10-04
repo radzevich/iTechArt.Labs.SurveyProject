@@ -14,8 +14,8 @@ namespace SurveyApp.DAL.Interfaces
         ApplicationRoleManager RoleManager { get; }
 
         SurveyRepository Surveys { get; }
+        SurveyTemplateRepository SurveyTemplates { get; set; }
         IRepository<CompletedSurvey> CompletedSurveys { get; }
-
         IRepository<PageDataModel> Pages { get; }
         IRepository<QuestionDataModel> Questions { get; }
         IRepository<AnswerDataModel> Answers { get; }

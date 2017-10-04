@@ -15,11 +15,13 @@ namespace SurveyApp.DAL.EntityModels
         public ApplicationUser ApplicationUser { get; set; }
  
         public virtual ICollection<SurveyDataModel> Surveys { get; set; }
+        public virtual ICollection<SurveyTemplateDataModel> SurveyTemplates { get; set; }
         public virtual ICollection<CompletedSurvey> CompletedSurveys { get; set; }
 
         public UserProfile()
         {
             Surveys = new List<SurveyDataModel>();
+            SurveyTemplates = new List<SurveyTemplateDataModel>();
             CompletedSurveys = new List<CompletedSurvey>();
         }
     }     

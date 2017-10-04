@@ -26,29 +26,32 @@ namespace SurveyApp.WebAPI.Controllers
         }
 
         [HttpGet]
-        [Route("getall")]
-        public IEnumerable<CreatedSurveyViewModel> GetAllSurveys(string userId)
+        [Route("getall/{templatesOnly:bool}")]
+        public IEnumerable<CreatedSurveyViewModel> GetAllSurveys(bool templatesOnly)
         {
             string currentUserId = RequestContext.Principal.Identity.Name;
 
-            IEnumerable<CreatedSurveyServiceModel> surveysServiceModels = SurveyService.GetSurveysCreatedByUser(currentUserId);
+            IEnumerable<SurveyServiceModel> surveysServiceModels = (templatesOnly)
+                ? SurveyService.GetSurveysTemplates(currentUserId)
+                : SurveyService.GetSurveysCreatedByUser(currentUserId);
+
             IEnumerable<CreatedSurveyViewModel> surveysForUser = (from survey in surveysServiceModels
-                                                                  select Mapper.Map<CreatedSurveyViewModel>(survey))
-                                                                  .ToList();
+                    select Mapper.Map<CreatedSurveyViewModel>(survey))
+                .ToList();
             if (!surveysForUser.Any())
             {
                 return new List<CreatedSurveyViewModel>();
-                
             }
             return surveysForUser;
-        }       
+        }
 
         [HttpPost]
         [Route("create")]
         public async Task<HttpResponseMessage> CreateSurvey(CreatedSurveyViewModel surveyToCreateViewModel)
         {
             string currentUserId = RequestContext.Principal.Identity.Name;
-            CreatedSurveyServiceModel surveyToCreateServiceModel = Mapper.Map<CreatedSurveyServiceModel>(surveyToCreateViewModel);
+            CreatedSurveyServiceModel surveyToCreateServiceModel =
+                Mapper.Map<CreatedSurveyServiceModel>(surveyToCreateViewModel);
 
             OperationDetails result = await SurveyService.CreateAsync(surveyToCreateServiceModel, currentUserId);
             if (!result.Succedeed)
@@ -63,7 +66,7 @@ namespace SurveyApp.WebAPI.Controllers
         public async Task<HttpResponseMessage> UpdateSurvey(CreatedSurveyViewModel surveyToUpdateViewModel)
         {
             string currentUserId = RequestContext.Principal.Identity.Name;
-            UpdatedSurveyServiceModel surveyServiceModel = Mapper.Map<UpdatedSurveyServiceModel>(surveyToUpdateViewModel);
+            SurveyServiceModel surveyServiceModel = Mapper.Map<SurveyServiceModel>(surveyToUpdateViewModel);
 
             OperationDetails result = await SurveyService.UpdateAsync(surveyServiceModel, currentUserId);
             if (!result.Succedeed)
@@ -88,6 +91,22 @@ namespace SurveyApp.WebAPI.Controllers
 
             return Request.CreateResponse(HttpStatusCode.OK);
 
+        }
+
+        [HttpPost]
+        [Route("saveAsTemplate")]
+        public async Task<HttpResponseMessage> SaveSurveyAsTemplate(CreatedSurveyServiceModel surveyToSaveAsTemplate)
+        {
+            string currentUserId = RequestContext.Principal.Identity.Name;
+            CreatedSurveyServiceModel surveyToCreateServiceModel =
+                Mapper.Map<CreatedSurveyServiceModel>(surveyToSaveAsTemplate);
+
+            OperationDetails result = await SurveyService.SaveAsTemplateAsync(surveyToCreateServiceModel, currentUserId);
+            if (!result.Succedeed)
+            {
+                return Request.CreateResponse(HttpStatusCode.NotModified);
+            }
+            return Request.CreateResponse(HttpStatusCode.OK);
         }
     }
 }

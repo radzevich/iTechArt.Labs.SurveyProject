@@ -13,8 +13,8 @@ namespace SurveyApp.WebAPI.AutoMapperProfiles
         public SurveyProfile()
         {
             CreateMap<CreatedSurveyViewModel, CreatedSurveyServiceModel>();
-            CreateMap<SurveyViewModel, UpdatedSurveyServiceModel>();
-            CreateMap<UpdatedSurveyServiceModel, SurveyViewModel>();
+            CreateMap<SurveyViewModel, SurveyServiceModel>();
+            CreateMap<SurveyServiceModel, SurveyViewModel>();
         }
     }
 }
