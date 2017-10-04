@@ -19,7 +19,7 @@ namespace SurveyApp.DAL.Repositories
 
         public IEnumerable<SurveyTemplateDataModel> GetSurveyTemplatesByCreatorId(string creatorId)
         {
-            return Get(survey => survey.CreatorId.ToString() == creatorId);
+            return Get(survey => survey.CreatorId == creatorId);
         }
     }
 }
