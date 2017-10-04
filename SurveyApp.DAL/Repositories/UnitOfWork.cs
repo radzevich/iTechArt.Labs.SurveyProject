@@ -4,7 +4,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using SurveyApp.DAL.DataContext;
 using SurveyApp.DAL.EntityModels;
 using SurveyApp.DAL.Identity;
-using SurveyApp.DAL.Interfaces;
+using SurveyApp.DAL.Repositories.Interfaces;
 
 namespace SurveyApp.DAL.Repositories
 {

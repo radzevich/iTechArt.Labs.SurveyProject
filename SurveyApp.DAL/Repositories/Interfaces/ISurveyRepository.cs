@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using SurveyApp.DAL.EntityModels;
 
-namespace SurveyApp.DAL.Interfaces
+namespace SurveyApp.DAL.Repositories.Interfaces
 {
     public interface ISurveyRepository
     {

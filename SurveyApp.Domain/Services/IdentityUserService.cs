@@ -2,11 +2,10 @@
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using SurveyApp.DAL.EntityModels;
-using SurveyApp.DAL.Interfaces;
+using SurveyApp.DAL.Repositories.Interfaces;
 using SurveyApp.BLL.Infrastructure;
-using SurveyApp.BLL.Interfaces;
+using SurveyApp.BLL.Services.Interfaces;
 using SurveyApp.BLL.Models;
 
 namespace SurveyApp.BLL.Services

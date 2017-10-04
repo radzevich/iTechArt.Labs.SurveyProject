@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using SurveyApp.BLL.Interfaces;
+using SurveyApp.BLL.Services.Interfaces;
 using SurveyApp.Models;
 
 namespace SurveyApp.Controllers

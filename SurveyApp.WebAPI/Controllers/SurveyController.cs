@@ -7,7 +7,7 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using AutoMapper;
 using SurveyApp.BLL.Infrastructure;
-using SurveyApp.BLL.Interfaces;
+using SurveyApp.BLL.Services.Interfaces;
 using SurveyApp.BLL.Models;
 using SurveyApp.WebAPI.Models;
 

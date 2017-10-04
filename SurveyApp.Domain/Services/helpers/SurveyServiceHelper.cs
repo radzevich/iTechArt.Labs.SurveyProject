@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using SurveyApp.DAL.EntityModels;
-using SurveyApp.DAL.Interfaces;
+using SurveyApp.DAL.Repositories.Interfaces;
 
 namespace SurveyApp.BLL.Services.helpers
 {

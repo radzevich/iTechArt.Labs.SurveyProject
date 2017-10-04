@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
-using Microsoft.AspNet.Identity;
 using SurveyApp.BLL.Infrastructure;
-using SurveyApp.BLL.Interfaces;
+using SurveyApp.BLL.Services.Interfaces;
 using SurveyApp.BLL.Models;
 using SurveyApp.BLL.Services.helpers;
 using SurveyApp.DAL.EntityModels;
-using SurveyApp.DAL.Interfaces;
+using SurveyApp.DAL.Repositories.Interfaces;
 
 namespace SurveyApp.BLL.Services
 {

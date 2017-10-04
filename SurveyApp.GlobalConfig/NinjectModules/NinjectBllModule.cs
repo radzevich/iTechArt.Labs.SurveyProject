@@ -1,5 +1,5 @@
 ﻿using Ninject.Modules;
-using SurveyApp.BLL.Interfaces;
+using SurveyApp.BLL.Services.Interfaces;
 using SurveyApp.BLL.Services;
 
 namespace SurveyApp.CrossLayerConfiguration.NinjectModules

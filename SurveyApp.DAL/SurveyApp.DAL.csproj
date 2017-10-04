@@ -77,8 +77,8 @@
   <ItemGroup>
     <Compile Include="EntityModels\SurveyTemplateDataModel.cs" />
     <Compile Include="Infrastructure\ApplicationContextFactory.cs" />
-    <Compile Include="Interfaces\ISurveyRepository.cs" />
-    <Compile Include="Interfaces\ISurveyTemplateRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ISurveyRepository.cs" />
+    <Compile Include="Repositories\Interfaces\ISurveyTemplateRepository.cs" />
     <Compile Include="Migrations\201708151405174_InitialCreate.cs" />
     <Compile Include="Migrations\201708151405174_InitialCreate.Designer.cs">
       <DependentUpon>201708151405174_InitialCreate.cs</DependentUpon>
@@ -180,9 +180,9 @@
     <Compile Include="EntityModels\UserProfile.cs" />
     <Compile Include="Identity\ApplicationRoleManager.cs" />
     <Compile Include="Identity\ApplicationUserManager.cs" />
-    <Compile Include="Interfaces\IUserProfileManager.cs" />
-    <Compile Include="Interfaces\IRepository.cs" />
-    <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Repositories\Interfaces\IUserProfileManager.cs" />
+    <Compile Include="Repositories\Interfaces\IRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\UserProfileManager.cs" />
   </ItemGroup>

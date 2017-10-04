@@ -1,5 +1,4 @@
-﻿using System;
-using SurveyApp.BLL.Models.common;
+﻿using SurveyApp.BLL.Models.common;
 
 namespace SurveyApp.BLL.Models
 {

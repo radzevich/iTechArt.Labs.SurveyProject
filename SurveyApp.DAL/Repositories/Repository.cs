@@ -4,7 +4,7 @@ using System.Linq;
 using System.Data.Entity;
 using System.Linq.Expressions;
 using SurveyApp.DAL.DataContext;
-using SurveyApp.DAL.Interfaces;
+using SurveyApp.DAL.Repositories.Interfaces;
 
 namespace SurveyApp.DAL.Repositories
 {

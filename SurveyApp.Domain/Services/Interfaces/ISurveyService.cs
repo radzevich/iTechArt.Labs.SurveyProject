@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using SurveyApp.BLL.Infrastructure;
 using SurveyApp.BLL.Models;
 
-namespace SurveyApp.BLL.Interfaces
+namespace SurveyApp.BLL.Services.Interfaces
 {
     public interface ISurveyService
     {

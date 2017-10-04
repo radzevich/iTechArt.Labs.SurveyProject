@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
-
-namespace SurveyApp.BLL.Models
+﻿namespace SurveyApp.BLL.Models
 {
     public class UserServiceModel
     {

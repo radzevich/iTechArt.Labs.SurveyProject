@@ -70,8 +70,8 @@
     <Compile Include="Configs\AutoMapperResolvers\QuestionServiceToDataResolver.cs" />
     <Compile Include="Configs\AutoMapperResolvers\SurveyServiceToDataResolver.cs" />
     <Compile Include="Infrastructure\OperationDetails.cs" />
-    <Compile Include="Interfaces\IIdentityUserService.cs" />
-    <Compile Include="Interfaces\ISurveyService.cs" />
+    <Compile Include="Services\Interfaces\IIdentityUserService.cs" />
+    <Compile Include="Services\Interfaces\ISurveyService.cs" />
     <Compile Include="Models\common\AnswerServiceModel.cs" />
     <Compile Include="Models\common\PageServiceModel.cs" />
     <Compile Include="Models\common\QuestionServiceModel.cs" />
@@ -85,9 +85,7 @@
     <Compile Include="Validators\CustomPasswordValidator.cs" />
     <Compile Include="Validators\CustomUserValidator.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Util\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\SurveyApp.DAL\SurveyApp.DAL.csproj">
       <Project>{89eb9baf-1c29-45a0-be5d-6862352ac646}</Project>

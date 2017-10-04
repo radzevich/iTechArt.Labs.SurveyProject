@@ -4,7 +4,7 @@ using SurveyApp.DAL.EntityModels;
 using SurveyApp.DAL.Identity;
 using SurveyApp.DAL.Repositories;
 
-namespace SurveyApp.DAL.Interfaces
+namespace SurveyApp.DAL.Repositories.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {

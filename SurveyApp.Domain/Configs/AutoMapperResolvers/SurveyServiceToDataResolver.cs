@@ -4,7 +4,7 @@ using AutoMapper;
 using SurveyApp.BLL.Models;
 using SurveyApp.BLL.Models.common;
 using SurveyApp.DAL.EntityModels;
-using SurveyApp.DAL.Interfaces;
+using SurveyApp.DAL.Repositories.Interfaces;
 
 namespace SurveyApp.BLL.Configs.AutoMapperResolvers
 {

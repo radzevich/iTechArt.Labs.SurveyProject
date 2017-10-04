@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Security.Claims;
 using Microsoft.AspNet.Identity;
 using SurveyApp.BLL.Infrastructure;
-using SurveyApp.BLL.Interfaces;
+using SurveyApp.BLL.Services.Interfaces;
 using SurveyApp.BLL.Models;
 using SurveyApp.Filters;
 using SurveyApp.Models;
