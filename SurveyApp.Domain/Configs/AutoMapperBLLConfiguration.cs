@@ -7,10 +7,12 @@ namespace SurveyApp.BLL.Configs
     {
         public static void Configure()
         {
-            Mapper.Initialize(cfg =>
-            {
-                cfg.AddProfile<SurveyProfile>();
-            });
+            Mapper.Initialize(Configure);
+        }
+
+        public static void Configure(IMapperConfigurationExpression config)
+        {
+            config.AddProfile<SurveyProfile>();
         }
     }
 }

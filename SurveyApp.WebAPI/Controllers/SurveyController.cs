@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -13,16 +14,32 @@ using SurveyApp.WebAPI.Models;
 
 namespace SurveyApp.WebAPI.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [RoutePrefix("api/survey")]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class SurveyController : ApiController
     {
         public ISurveyService SurveyService { get; }
+        public IMapper Mapper { get; }
 
-        public SurveyController(ISurveyService surveyService)
+        public SurveyController(ISurveyService surveyService, IMapper mapper)
         {
             SurveyService = surveyService;
+            Mapper = mapper;
+        }
+
+        [HttpGet]
+        [Route("")]
+        public HttpResponseMessage Get()
+        {
+            if (SurveyService != null)
+            {
+                return new HttpResponseMessage(HttpStatusCode.Created);
+            }
+            else
+            {
+                return new HttpResponseMessage(HttpStatusCode.Accepted);
+            }
         }
 
         [HttpGet]
@@ -50,15 +67,22 @@ namespace SurveyApp.WebAPI.Controllers
         public async Task<HttpResponseMessage> CreateSurvey(CreatedSurveyViewModel surveyToCreateViewModel)
         {
             string currentUserId = RequestContext.Principal.Identity.Name;
-            CreatedSurveyServiceModel surveyToCreateServiceModel =
-                Mapper.Map<CreatedSurveyServiceModel>(surveyToCreateViewModel);
-
-            OperationDetails result = await SurveyService.CreateAsync(surveyToCreateServiceModel, currentUserId);
-            if (!result.Succedeed)
+            try
             {
-                return Request.CreateResponse(HttpStatusCode.NotModified);
+                CreatedSurveyServiceModel surveyToCreateServiceModel =
+                    Mapper.Map<CreatedSurveyServiceModel>(surveyToCreateViewModel);
+
+                OperationDetails result = await SurveyService.CreateAsync(surveyToCreateServiceModel, currentUserId);
+                if (!result.Succedeed)
+                {
+                    return Request.CreateResponse(HttpStatusCode.NotModified);
+                }
+                return Request.CreateResponse(HttpStatusCode.Created);
             }
-            return Request.CreateResponse(HttpStatusCode.OK);
+            catch (Exception e)
+            {
+                throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.InternalServerError));
+            }
         }
 
         [HttpPost]

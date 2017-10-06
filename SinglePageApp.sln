@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyApp.DAL", "SurveyApp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyApp.WebAPI", "SurveyApp.WebAPI\SurveyApp.WebAPI.csproj", "{ED0300C7-28F2-4E4F-9025-9E2259EFB5BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyApp.CrossLayerConfiguration", "SurveyApp.GlobalConfig\SurveyApp.CrossLayerConfiguration.csproj", "{FC2BDC69-21DD-4DA3-967D-B89D57E95F47}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyApp.CompositionRoot", "SurveyApp.GlobalConfig\SurveyApp.CompositionRoot.csproj", "{FC2BDC69-21DD-4DA3-967D-B89D57E95F47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

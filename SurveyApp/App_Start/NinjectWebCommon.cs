@@ -1,5 +1,3 @@
-using SurveyApp.CrossLayerConfiguration;
-
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(SurveyApp.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(SurveyApp.App_Start.NinjectWebCommon), "Stop")]
 
@@ -7,16 +5,22 @@ namespace SurveyApp.App_Start
 {
     using System;
     using System.Web;
+    using System.Collections.Generic;
+    using SurveyApp.NinjectModules;
 
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
     using Ninject;
     using Ninject.Web.Common;
+    using Ninject.Modules;
 
     public static class NinjectWebCommon 
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
 
+        /// <summary>
+        /// Starts the application
+        /// </summary>
         public static void Start() 
         {
             DynamicModuleUtility.RegisterModule(typeof(OnePerRequestHttpModule));
@@ -24,11 +28,18 @@ namespace SurveyApp.App_Start
             bootstrapper.Initialize(CreateKernel);
         }
         
+        /// <summary>
+        /// Stops the application.
+        /// </summary>
         public static void Stop()
         {
             bootstrapper.ShutDown();
         }
         
+        /// <summary>
+        /// Creates the kernel that will manage your application.
+        /// </summary>
+        /// <returns>The created kernel.</returns>
         private static IKernel CreateKernel()
         {
             var kernel = new StandardKernel();
@@ -47,9 +58,19 @@ namespace SurveyApp.App_Start
             }
         }
 
+        /// <summary>
+        /// Load your modules or register your services here!
+        /// </summary>
+        /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            NinjectConfig.Register(kernel);
+            var modules = new List<INinjectModule>
+            {
+                new NinjectBllModule(),
+                new NinjectDalModule(),
+            };
+
+            kernel.Load(modules);
         }        
     }
 }

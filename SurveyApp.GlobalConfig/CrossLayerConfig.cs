@@ -1,6 +1,6 @@
 ﻿using SurveyApp.BLL.Configs;
 
-namespace SurveyApp.CrossLayerConfiguration
+namespace SurveyApp.CompositionRoot
 {
     public class CrossLayerConfig
     {

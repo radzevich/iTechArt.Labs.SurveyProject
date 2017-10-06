@@ -1,5 +1,4 @@
 ﻿using SurveyApp.BLL.Configs;
-using SurveyApp.WebAPI;
 
 namespace SurveyApp
 {
@@ -8,7 +7,6 @@ namespace SurveyApp
         public static void Register()
         {
             AutoMapperBLLConfiguration.Configure();
-            AutoMapperWebConfiguration.Configure();
         }
     }
 }

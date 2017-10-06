@@ -2,7 +2,7 @@
 using SurveyApp.BLL.Services.Interfaces;
 using SurveyApp.BLL.Services;
 
-namespace SurveyApp.CrossLayerConfiguration.NinjectModules
+namespace SurveyApp.CompositionRoot.NinjectModules
 {
     public class NinjectBllModule : NinjectModule
     {

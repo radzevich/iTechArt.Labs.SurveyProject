@@ -2,7 +2,7 @@
 using SurveyApp.DAL.Repositories.Interfaces;
 using SurveyApp.DAL.Repositories;
 
-namespace SurveyApp.CrossLayerConfiguration.NinjectModules
+namespace SurveyApp.CompositionRoot.NinjectModules
 {
     public class NinjectDalModule : NinjectModule
     {

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using Ninject;
 using Ninject.Modules;
-using SurveyApp.CrossLayerConfiguration.NinjectModules;
+using SurveyApp.CompositionRoot.NinjectModules;
 
-namespace SurveyApp.CrossLayerConfiguration
+namespace SurveyApp.CompositionRoot
 {
     public class NinjectConfig
     {
