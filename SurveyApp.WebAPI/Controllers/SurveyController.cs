@@ -10,6 +10,7 @@ using AutoMapper;
 using SurveyApp.BLL.Infrastructure;
 using SurveyApp.BLL.Services.Interfaces;
 using SurveyApp.BLL.Models;
+using SurveyApp.BLL.Models.common;
 using SurveyApp.WebAPI.Models;
 
 namespace SurveyApp.WebAPI.Controllers
@@ -22,15 +23,14 @@ namespace SurveyApp.WebAPI.Controllers
         private const string MvcAccountControllerUri = "http://localhost:1169/Account/GetCurrentUserName";
 
         public ISurveyService SurveyService { get; }
-        public IAuthenticatedUserService AuthenticatedUserService { get; }
+        public IIdentityUserService UserService { get; }
         public IMapper Mapper { get; }
 
-        public SurveyController(ISurveyService surveyService, IAuthenticatedUserService authenticatedUserService, IMapper mapper)
+        public SurveyController(ISurveyService surveyService, IIdentityUserService userService, IMapper mapper)
         {
             SurveyService = surveyService;
-            AuthenticatedUserService = authenticatedUserService;
+            UserService = userService;
             Mapper = mapper;
-            string currentUserId = AuthenticatedUserService.GetUserName(MvcAccountControllerUri);
         }
 
         [HttpGet]
@@ -38,6 +38,20 @@ namespace SurveyApp.WebAPI.Controllers
         public HttpResponseMessage Get()
         {
             if (SurveyService != null)
+            {
+                return new HttpResponseMessage(HttpStatusCode.Created);
+            }
+            else
+            {
+                return new HttpResponseMessage(HttpStatusCode.Accepted);
+            }
+        }
+
+        [HttpGet]
+        [Route("auth")]
+        public HttpResponseMessage GetUser()
+        {
+            if (User != null)
             {
                 return new HttpResponseMessage(HttpStatusCode.Created);
             }
@@ -71,14 +85,15 @@ namespace SurveyApp.WebAPI.Controllers
         [Route("create")]
         public async Task<HttpResponseMessage> CreateSurvey(CreatedSurveyViewModel surveyToCreateViewModel)
         {
-            //string currentUserId = AuthenticatedUserService.GetUserName();
-            string currentUserId = "";
+            //if (await UserService.IsUserExists(surveyToCreateViewModel.CreatorId))
+            //{
             try
             {
                 CreatedSurveyServiceModel surveyToCreateServiceModel =
                     Mapper.Map<CreatedSurveyServiceModel>(surveyToCreateViewModel);
 
-                OperationDetails result = await SurveyService.CreateAsync(surveyToCreateServiceModel, currentUserId);
+                //TODO: Remove second parameter (surveyToCreateServiceModel) already contains creatoId.
+                OperationDetails result = await SurveyService.CreateAsync(surveyToCreateServiceModel, surveyToCreateViewModel.CreatorId);
                 if (!result.Succedeed)
                 {
                     return Request.CreateResponse(HttpStatusCode.NotModified);
@@ -89,6 +104,12 @@ namespace SurveyApp.WebAPI.Controllers
             {
                 throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.InternalServerError));
             }
+                
+            //}
+            //else
+            //{
+            //    throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.InternalServerError));
+            //}
         }
 
         [HttpPost]

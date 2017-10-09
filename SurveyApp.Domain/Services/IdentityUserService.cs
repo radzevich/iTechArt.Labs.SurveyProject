@@ -59,6 +59,11 @@ namespace SurveyApp.BLL.Services
             return new OperationDetails(false, UserIsAlreadyExistMessageText, PropertyNameEmail);
         }
 
+        public async Task<bool> IsUserExists(string userToCheckId)
+        {
+            return (await _database.UserManager.FindByEmailAsync(userToCheckId) != null);
+        }
+
         public async Task<ClaimsIdentity> AuthenticateAsync(UserServiceModel userToAuthenticate)
         {
             ClaimsIdentity claim = null;

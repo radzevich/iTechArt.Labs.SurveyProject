@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using AutoMapper;
+﻿using AutoMapper;
 using SurveyApp.BLL.Models.common;
 using SurveyApp.WebAPI.Models.common;
 
@@ -10,9 +9,7 @@ namespace SurveyApp.WebAPI.AutoMapperResolvers
         public AnswerServiceModel[] Resolve(QuestionViewModel source, QuestionServiceModel destination, AnswerServiceModel[] destMember,
             ResolutionContext context)
         {
-            AnswerServiceModel[] answersToQuestion = (from answerToQuestion in source.Answers
-                                                      select context.Mapper.Map<AnswerServiceModel>(answerToQuestion))
-                                                      .ToArray();
+            AnswerServiceModel[] answersToQuestion = Mapper.Map<AnswerServiceModel[]>(source.Answers);
 
             return answersToQuestion;
         }

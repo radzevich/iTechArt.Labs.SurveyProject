@@ -96,3 +96,11 @@ D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.WebAPI\obj\Debug\
 D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.WebAPI\obj\Debug\SurveyApp.WebAPI.pdb
 D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.WebAPI\bin\EntityFramework.SqlServer.dll
 D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.WebAPI\bin\EntityFramework.SqlServer.xml
+D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.WebAPI\bin\Microsoft.Owin.dll
+D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.WebAPI\bin\Microsoft.Owin.Security.Cookies.dll
+D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.WebAPI\bin\Microsoft.Owin.Security.dll
+D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.WebAPI\bin\Owin.dll
+D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.WebAPI\bin\Microsoft.Owin.xml
+D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.WebAPI\bin\Microsoft.Owin.Security.xml
+D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.WebAPI\bin\Microsoft.Owin.Security.Cookies.xml
+D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.WebAPI\bin\AutoMapper.Collection.dll

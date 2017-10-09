@@ -195,6 +195,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Filters\AllowCors.cs" />
     <Compile Include="Filters\Unauthenticated.cs" />
     <Compile Include="Models\DeleteModel.cs" />
     <Compile Include="Models\EditModel.cs" />

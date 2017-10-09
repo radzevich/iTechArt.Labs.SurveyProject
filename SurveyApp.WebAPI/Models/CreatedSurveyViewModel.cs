@@ -6,6 +6,9 @@ namespace SurveyApp.WebAPI.Models
     public class CreatedSurveyViewModel
     {
         [Required]
+        public string CreatorId { get; set; }
+
+        [Required]
         public string Title { get; set; }
 
         public bool IsAnonymous { get; set; }

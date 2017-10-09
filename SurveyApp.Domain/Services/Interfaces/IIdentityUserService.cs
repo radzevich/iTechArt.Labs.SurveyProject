@@ -10,5 +10,6 @@ namespace SurveyApp.BLL.Services.Interfaces
     {
         Task<OperationDetails> CreateAsync(UserServiceModel userDataToRegister);
         Task<ClaimsIdentity> AuthenticateAsync(UserServiceModel userDataToAuthenticate);
+        Task<bool> IsUserExists(string userToCheckId);
     }
 }

@@ -11,10 +11,7 @@ namespace SurveyApp.WebAPI.AutoMapperResolvers
         public PageServiceModel[] Resolve(CreatedSurveyViewModel source, CreatedSurveyServiceModel destination, PageServiceModel[] destMember,
             ResolutionContext context)
         {
-            PageServiceModel[] surveyPages = (from pageViewModel in source.Pages
-                                              select context.Mapper.Map<PageServiceModel>(pageViewModel))
-                                              .ToArray();
-
+            PageServiceModel[] surveyPages = Mapper.Map<PageServiceModel[]>(source.Pages);
             return surveyPages;
         }
     }
