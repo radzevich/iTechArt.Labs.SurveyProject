@@ -26,6 +26,15 @@ namespace SurveyApp.Controllers
             }
         }
 
+        [HttpGet]
+        [AllowCors]
+        [AllowAnonymous]
+        [Unauthenticated]
+        public ActionResult GetCurrentUserName()
+        {
+            return Json(User.Identity.Name);
+        }
+
         public AccountController(IIdentityUserService userService)
         {
             UserService = userService;

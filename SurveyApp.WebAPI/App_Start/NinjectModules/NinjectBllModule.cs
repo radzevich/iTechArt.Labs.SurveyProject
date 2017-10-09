@@ -10,6 +10,7 @@ namespace SurveyApp.WebAPI.NinjectModules
         {
             Bind<ISurveyService>().To<SurveyService>();
             Bind<IIdentityUserService>().To<IdentityUserService>();
+            Bind<IAuthenticatedUserService>().To<AuthenticatedUserService>();
         }
     }
 }

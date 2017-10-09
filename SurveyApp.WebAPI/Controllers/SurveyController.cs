@@ -19,13 +19,18 @@ namespace SurveyApp.WebAPI.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class SurveyController : ApiController
     {
+        private const string MvcAccountControllerUri = "http://localhost:1169/Account/GetCurrentUserName";
+
         public ISurveyService SurveyService { get; }
+        public IAuthenticatedUserService AuthenticatedUserService { get; }
         public IMapper Mapper { get; }
 
-        public SurveyController(ISurveyService surveyService, IMapper mapper)
+        public SurveyController(ISurveyService surveyService, IAuthenticatedUserService authenticatedUserService, IMapper mapper)
         {
             SurveyService = surveyService;
+            AuthenticatedUserService = authenticatedUserService;
             Mapper = mapper;
+            string currentUserId = AuthenticatedUserService.GetUserName(MvcAccountControllerUri);
         }
 
         [HttpGet]
@@ -66,7 +71,8 @@ namespace SurveyApp.WebAPI.Controllers
         [Route("create")]
         public async Task<HttpResponseMessage> CreateSurvey(CreatedSurveyViewModel surveyToCreateViewModel)
         {
-            string currentUserId = RequestContext.Principal.Identity.Name;
+            //string currentUserId = AuthenticatedUserService.GetUserName();
+            string currentUserId = "";
             try
             {
                 CreatedSurveyServiceModel surveyToCreateServiceModel =

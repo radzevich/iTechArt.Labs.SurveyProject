@@ -66,10 +66,12 @@
     <Compile Include="Configs\AutoMapperBLLConfiguration.cs" />
     <Compile Include="Configs\AutoMapperProfiles\SurveyProfile.cs" />
     <Compile Include="Configs\AutoMapperResolvers\AnswerServiceToDataResolver.cs" />
-    <Compile Include="Configs\AutoMapperResolvers\PageServiceToDataResolver.cs" />
-    <Compile Include="Configs\AutoMapperResolvers\QuestionServiceToDataResolver.cs" />
-    <Compile Include="Configs\AutoMapperResolvers\SurveyServiceToDataResolver.cs" />
+    <Compile Include="Configs\AutoMapperResolvers\AnswerListResolver.cs" />
+    <Compile Include="Configs\AutoMapperResolvers\QuestionListResolver.cs" />
+    <Compile Include="Configs\AutoMapperResolvers\PageListResolver.cs" />
     <Compile Include="Infrastructure\OperationDetails.cs" />
+    <Compile Include="Services\AuthenticatedUserService.cs" />
+    <Compile Include="Services\Interfaces\IAuthenticatedUserService.cs" />
     <Compile Include="Services\Interfaces\IIdentityUserService.cs" />
     <Compile Include="Services\Interfaces\ISurveyService.cs" />
     <Compile Include="Models\common\AnswerServiceModel.cs" />

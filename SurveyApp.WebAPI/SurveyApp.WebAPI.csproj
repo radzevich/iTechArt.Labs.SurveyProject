@@ -202,6 +202,9 @@
   <ItemGroup>
     <Compile Include="App_Start\AutomapperConfig.cs" />
     <Compile Include="App_Start\AutoMapperProfiles\SurveyProfile.cs" />
+    <Compile Include="App_Start\AutoMapperResolvers\AnswerListResolver.cs" />
+    <Compile Include="App_Start\AutoMapperResolvers\QuestionListResolver.cs" />
+    <Compile Include="App_Start\AutoMapperResolvers\PageListResolver.cs" />
     <Compile Include="App_Start\AutoMapperWebConfiguration.cs" />
     <Compile Include="App_Start\NinjectModules\NinjectAutomapperModule.cs" />
     <Compile Include="App_Start\NinjectModules\NinjectBllModule.cs" />

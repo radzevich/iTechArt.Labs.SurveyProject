@@ -46,3 +46,4 @@ D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.DAL\obj\Debug\Sur
 D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.DAL\obj\Debug\SurveyApp.DAL.csproj.GenerateResource.Cache
 D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.DAL\obj\Debug\SurveyApp.DAL.dll
 D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.DAL\obj\Debug\SurveyApp.DAL.pdb
+D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.DAL\obj\Debug\SurveyApp.DAL.csprojResolveAssemblyReference.cache

@@ -2,6 +2,8 @@
 {
     public class QuestionViewModel
     {
+        public int Id { get; set; }
+
         public int TypeId { get; set; }
         public bool IsRequired { get; set; }
 
