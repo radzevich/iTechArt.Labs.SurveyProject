@@ -11,10 +11,10 @@ namespace SurveyApp.DAL.Repositories
         {
         }
 
-        public void Create(SurveyTemplateDataModel surveyTemplateToCreate)
+        public async void CreateAsync(SurveyTemplateDataModel surveyTemplateToCreate)
         {
             context.SurveyTemplates.Add(surveyTemplateToCreate);
-            context.SaveChangesAsync();
+            await context.SaveChangesAsync();
         }
 
         public IEnumerable<SurveyTemplateDataModel> GetSurveyTemplatesByCreatorId(string creatorId)

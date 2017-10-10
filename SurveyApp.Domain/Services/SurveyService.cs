@@ -32,7 +32,6 @@ namespace SurveyApp.BLL.Services
         {
             //var creatorIdentinity = await _context.UserManager.FindByNameAsync(surveyToCreate.CreatorId);
             var creatorIdentity = _context.UserManager.Users.Include("Profile").FirstOrDefault();
-
             var creatorProfile = creatorIdentity.Profile;
 
             if (creatorProfile != null)
@@ -45,7 +44,7 @@ namespace SurveyApp.BLL.Services
                 surveyToCreateDataModel.CreationTime = DateTime.Now;
                 surveyToCreateDataModel.ModificationTime = surveyToCreateDataModel.CreationTime;
 
-                _context.Surveys.Create(surveyToCreateDataModel);
+                await Task.Run(() => _context.Surveys.CreateAsync(surveyToCreateDataModel));
             }
             else
             {
@@ -77,7 +76,7 @@ namespace SurveyApp.BLL.Services
             surveyToUpdateDataModel.Modifier = modifierIdentinity.Profile;
             surveyToUpdateDataModel.ModificationTime = DateTime.Now;
                     
-            _context.Surveys.Create(surveyDataModel);
+            _context.Surveys.CreateAsync(surveyDataModel);
 
             return new OperationDetails(true, "", "");
         }
@@ -101,22 +100,22 @@ namespace SurveyApp.BLL.Services
             return new OperationDetails(true, "", "");
         }
 
-        public async Task<OperationDetails> SaveAsTemplateAsync(CreatedSurveyServiceModel surveyToSave, string creatorName)
+        public async Task<OperationDetails> SaveAsTemplateAsync(CreatedSurveyServiceModel surveyToSaveAsTemplate)
         {
-            var creatorIdentinity = await _context.UserManager.FindByNameAsync(creatorName);
-            var creatorProfile = creatorIdentinity.Profile;
+            //var creatorIdentinity = await _context.UserManager.FindByNameAsync(surveyToCreate.CreatorId);
+            var creatorIdentity = _context.UserManager.Users.Include("Profile").FirstOrDefault();
+            var creatorProfile = creatorIdentity.Profile;
 
             if (creatorProfile != null)
             {
-                var surveyToSaveAsTemplateDataModel = Mapper.Map<SurveyTemplateDataModel>(surveyToSave);
+                var surveyToSaveAsTemplateDataModel = Mapper.Map<SurveyTemplateDataModel>(surveyToSaveAsTemplate);
 
                 surveyToSaveAsTemplateDataModel.Creator = creatorProfile;
                 surveyToSaveAsTemplateDataModel.Modifier = creatorProfile;
                 surveyToSaveAsTemplateDataModel.CreationTime = DateTime.Now;
                 surveyToSaveAsTemplateDataModel.ModificationTime = surveyToSaveAsTemplateDataModel.CreationTime;
 
-                _context.SurveyTemplates.Insert(surveyToSaveAsTemplateDataModel);
-                await _context.SaveAsync();
+                await Task.Run(() => _context.SurveyTemplates.CreateAsync(surveyToSaveAsTemplateDataModel));
             }
             else
             {

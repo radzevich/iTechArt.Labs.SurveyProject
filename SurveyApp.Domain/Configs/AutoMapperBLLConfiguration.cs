@@ -12,7 +12,8 @@ namespace SurveyApp.BLL.Configs
 
         public static void Configure(IMapperConfigurationExpression config)
         {
-            config.AddProfile<SurveyProfile>();
+            config.AddProfile<SurveyCommonComponentsProfile>();
+            config.AddProfile<CreateSurveyProfile>();
         }
     }
 }

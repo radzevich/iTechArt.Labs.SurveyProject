@@ -10,7 +10,7 @@ namespace SurveyApp.BLL.Services.Interfaces
         Task<OperationDetails> CreateAsync(CreatedSurveyServiceModel surveyToCreate);
         Task<OperationDetails> UpdateAsync(SurveyServiceModel updatedSurvey, string modifierName);
         Task<OperationDetails> RemoveAsync(int surveyId, string intiatedByUserId);
-        Task<OperationDetails> SaveAsTemplateAsync(CreatedSurveyServiceModel surveyToSave, string creatorName);
+        Task<OperationDetails> SaveAsTemplateAsync(CreatedSurveyServiceModel surveyToSaveAsTemplate);
         IEnumerable<SurveyServiceModel> GetSurveysCreatedByUser(string ownerId);
         IEnumerable<SurveyServiceModel> GetSurveysTemplates(string ownerId);
     }

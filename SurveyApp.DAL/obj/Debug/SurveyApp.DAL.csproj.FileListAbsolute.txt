@@ -35,3 +35,4 @@ D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.DAL\obj\Debug\Sur
 D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.DAL\obj\Debug\SurveyApp.DAL.pdb
 D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.DAL\obj\Debug\SurveyApp.DAL.Migrations.InitialSqlServerMigration.resources
 D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.DAL\obj\Debug\SurveyApp.DAL.Migrations.SurveIdColumnWasRenamedToSurveyIdInPagesTable.resources
+D:\SinglePageAppBE\temp1\iTechArt.Labs.SurveyProject\SurveyApp.DAL\obj\Debug\SurveyApp.DAL.csprojResolveAssemblyReference.cache

@@ -6,7 +6,7 @@ namespace SurveyApp.DAL.Repositories.Interfaces
 {
     public interface ISurveyRepository
     {
-        void Create(SurveyDataModel surveyToCreate);
+        void CreateAsync(SurveyDataModel surveyToCreate);
         IEnumerable<SurveyDataModel> GetSurveysByCreatorId(string creatorId);
     }
 }

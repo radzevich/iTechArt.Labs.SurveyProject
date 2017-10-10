@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using SurveyApp.DAL.DataContext;
 using SurveyApp.DAL.EntityModels;
 using SurveyApp.DAL.Repositories.Interfaces;
@@ -12,10 +13,10 @@ namespace SurveyApp.DAL.Repositories
         {
         }
 
-        public void Create(SurveyDataModel surveyToCreate)
+        public async void CreateAsync(SurveyDataModel surveyToCreate)
         {
             context.Surveys.Add(surveyToCreate);
-            context.SaveChangesAsync();
+            await context.SaveChangesAsync();
         }
 
         public IEnumerable<SurveyDataModel> GetSurveysByCreatorId(string creatorId)

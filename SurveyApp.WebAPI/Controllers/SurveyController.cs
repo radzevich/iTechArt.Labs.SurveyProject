@@ -151,7 +151,7 @@ namespace SurveyApp.WebAPI.Controllers
             CreatedSurveyServiceModel surveyToCreateServiceModel =
                 Mapper.Map<CreatedSurveyServiceModel>(surveyToSaveAsTemplate);
 
-            OperationDetails result = await SurveyService.SaveAsTemplateAsync(surveyToCreateServiceModel, currentUserId);
+            OperationDetails result = await SurveyService.SaveAsTemplateAsync(surveyToCreateServiceModel);
             if (!result.Succedeed)
             {
                 return Request.CreateResponse(HttpStatusCode.NotModified);

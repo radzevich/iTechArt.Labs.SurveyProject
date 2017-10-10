@@ -64,12 +64,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configs\AutoMapperBLLConfiguration.cs" />
-    <Compile Include="Configs\AutoMapperProfiles\SurveyProfile.cs" />
+    <Compile Include="Configs\AutoMapperProfiles\CreateSurveyProfile.cs" />
+    <Compile Include="Configs\AutoMapperProfiles\CreateSurveyTemplateProfile.cs" />
+    <Compile Include="Configs\AutoMapperProfiles\SurveyCommonComponentsProfile.cs" />
     <Compile Include="Configs\AutoMapperResolvers\AnswerServiceToDataResolver.cs" />
     <Compile Include="Configs\AutoMapperResolvers\AnswerListResolver.cs" />
+    <Compile Include="Configs\AutoMapperResolvers\PageTemplateListResolver.cs" />
     <Compile Include="Configs\AutoMapperResolvers\QuestionListResolver.cs" />
     <Compile Include="Configs\AutoMapperResolvers\PageListResolver.cs" />
-    <Compile Include="Configs\AutoMapperResolvers\SurveyResolver.cs" />
+    <Compile Include="Configs\AutoMapperResolvers\QuestionTemplateListResolver.cs" />
     <Compile Include="Infrastructure\OperationDetails.cs" />
     <Compile Include="Services\AuthenticatedUserService.cs" />
     <Compile Include="Services\Interfaces\IAuthenticatedUserService.cs" />
