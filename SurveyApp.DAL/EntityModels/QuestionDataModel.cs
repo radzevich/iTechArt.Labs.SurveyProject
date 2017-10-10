@@ -21,7 +21,7 @@ namespace SurveyApp.DAL.EntityModels
         public virtual ICollection<ReceivedAnswer> ReceivedAnswers { get; set; }
 
         public PageDataModel Page { get; set; }
-        public SurveyDataModel Survey { get; set; }
+        public SurveyBaseDataModel Survey { get; set; }
 
         public QuestionDataModel()
         {

@@ -17,7 +17,7 @@ namespace SurveyApp.WebAPI.AutoMapperProfiles
                 .ForMember(dest => dest.Answers, opt => opt.ResolveUsing<AnswerListResolver>());
             CreateMap<PageViewModel, PageServiceModel>()
                 .ForMember(dest => dest.Questions, opt => opt.ResolveUsing<QuestionListResolver>());
-            CreateMap<CreatedSurveyViewModel, CreatedSurveyServiceModel>()
+            CreateMap<CreatedSurveyViewModel, SurveyServiceModel>()
                 .ForMember(dest => dest.Pages, opt => opt.ResolveUsing<PageListResolver>())
                 .ForMember(dest => dest.CreatorId, opt => opt.Ignore());
 

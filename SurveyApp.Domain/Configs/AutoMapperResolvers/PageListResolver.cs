@@ -6,9 +6,9 @@ using SurveyApp.DAL.EntityModels;
 
 namespace SurveyApp.BLL.Configs.AutoMapperResolvers
 {
-    public class PageListResolver : IValueResolver<CreatedSurveyServiceModel, SurveyDataModel, ICollection<PageDataModel>>
+    public class PageListResolver : IValueResolver<SurveyServiceModel, SurveyBaseDataModel, ICollection<PageDataModel>>
     {
-        public ICollection<PageDataModel> Resolve(CreatedSurveyServiceModel source, SurveyDataModel destination, ICollection<PageDataModel> destMember,
+        public ICollection<PageDataModel> Resolve(SurveyServiceModel source, SurveyBaseDataModel destination, ICollection<PageDataModel> destMember,
             ResolutionContext context)
         {
             var pages = new List<PageDataModel>();

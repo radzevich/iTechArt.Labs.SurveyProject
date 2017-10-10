@@ -28,7 +28,7 @@ namespace SurveyApp.BLL.Services
             _helper = new SurveyServiceHelper(_context);
         }      
 
-        public async Task<OperationDetails> CreateAsync(CreatedSurveyServiceModel surveyToCreate)
+        public async Task<OperationDetails> CreateAsync(SurveyServiceModel surveyToCreate)
         {
             //var creatorIdentinity = await _context.UserManager.FindByNameAsync(surveyToCreate.CreatorId);
             var creatorIdentity = _context.UserManager.Users.Include("Profile").FirstOrDefault();
@@ -44,7 +44,7 @@ namespace SurveyApp.BLL.Services
                 surveyToCreateDataModel.CreationTime = DateTime.Now;
                 surveyToCreateDataModel.ModificationTime = surveyToCreateDataModel.CreationTime;
 
-                await Task.Run(() => _context.Surveys.CreateAsync(surveyToCreateDataModel));
+                await Task.Run(() => _context.Surveys.SaveAsync(surveyToCreateDataModel));
             }
             else
             {
@@ -76,7 +76,7 @@ namespace SurveyApp.BLL.Services
             surveyToUpdateDataModel.Modifier = modifierIdentinity.Profile;
             surveyToUpdateDataModel.ModificationTime = DateTime.Now;
                     
-            _context.Surveys.CreateAsync(surveyDataModel);
+            _context.Surveys.SaveAsync(surveyDataModel);
 
             return new OperationDetails(true, "", "");
         }
@@ -100,7 +100,7 @@ namespace SurveyApp.BLL.Services
             return new OperationDetails(true, "", "");
         }
 
-        public async Task<OperationDetails> SaveAsTemplateAsync(CreatedSurveyServiceModel surveyToSaveAsTemplate)
+        public async Task<OperationDetails> SaveAsTemplateAsync(SurveyServiceModel surveyToSaveAsTemplate)
         {
             //var creatorIdentinity = await _context.UserManager.FindByNameAsync(surveyToCreate.CreatorId);
             var creatorIdentity = _context.UserManager.Users.Include("Profile").FirstOrDefault();
@@ -115,7 +115,7 @@ namespace SurveyApp.BLL.Services
                 surveyToSaveAsTemplateDataModel.CreationTime = DateTime.Now;
                 surveyToSaveAsTemplateDataModel.ModificationTime = surveyToSaveAsTemplateDataModel.CreationTime;
 
-                await Task.Run(() => _context.SurveyTemplates.CreateAsync(surveyToSaveAsTemplateDataModel));
+                await Task.Run(() => _context.SurveyTemplates.SaveAsync(surveyToSaveAsTemplateDataModel));
             }
             else
             {

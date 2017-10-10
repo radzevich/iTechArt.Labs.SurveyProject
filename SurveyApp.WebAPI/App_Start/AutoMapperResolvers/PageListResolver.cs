@@ -6,9 +6,9 @@ using SurveyApp.WebAPI.Models;
 
 namespace SurveyApp.WebAPI.AutoMapperResolvers
 {
-    public class PageListResolver : IValueResolver<CreatedSurveyViewModel, CreatedSurveyServiceModel, PageServiceModel[]>
+    public class PageListResolver : IValueResolver<CreatedSurveyViewModel, SurveyServiceModel, PageServiceModel[]>
     {
-        public PageServiceModel[] Resolve(CreatedSurveyViewModel source, CreatedSurveyServiceModel destination, PageServiceModel[] destMember,
+        public PageServiceModel[] Resolve(CreatedSurveyViewModel source, SurveyServiceModel destination, PageServiceModel[] destMember,
             ResolutionContext context)
         {
             PageServiceModel[] surveyPages = Mapper.Map<PageServiceModel[]>(source.Pages);

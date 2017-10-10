@@ -75,15 +75,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityModels\SurveyBaseDataModel.cs" />
     <Compile Include="EntityModels\SurveyTemplateDataModel.cs" />
     <Compile Include="Infrastructure\ApplicationContextFactory.cs" />
-    <Compile Include="Migrations\201710100653429_InitialSqlServerMigration.cs" />
-    <Compile Include="Migrations\201710100653429_InitialSqlServerMigration.Designer.cs">
-      <DependentUpon>201710100653429_InitialSqlServerMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710100656002_SurveIdColumnWasRenamedToSurveyIdInPagesTable.cs" />
-    <Compile Include="Migrations\201710100656002_SurveIdColumnWasRenamedToSurveyIdInPagesTable.Designer.cs">
-      <DependentUpon>201710100656002_SurveIdColumnWasRenamedToSurveyIdInPagesTable.cs</DependentUpon>
+    <Compile Include="Migrations\201710101210067_SurveyAndSurveyTemplateEntitiesWereInheretedFromSurveyBase.cs" />
+    <Compile Include="Migrations\201710101210067_SurveyAndSurveyTemplateEntitiesWereInheretedFromSurveyBase.Designer.cs">
+      <DependentUpon>201710101210067_SurveyAndSurveyTemplateEntitiesWereInheretedFromSurveyBase.cs</DependentUpon>
     </Compile>
     <Compile Include="Repositories\Interfaces\ISurveyRepository.cs" />
     <Compile Include="Repositories\Interfaces\ISurveyTemplateRepository.cs" />
@@ -173,11 +170,8 @@
     <EmbeddedResource Include="Migrations\201708161256130_Test.resx">
       <DependentUpon>201708161256130_Test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710100653429_InitialSqlServerMigration.resx">
-      <DependentUpon>201710100653429_InitialSqlServerMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710100656002_SurveIdColumnWasRenamedToSurveyIdInPagesTable.resx">
-      <DependentUpon>201710100656002_SurveIdColumnWasRenamedToSurveyIdInPagesTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710101210067_SurveyAndSurveyTemplateEntitiesWereInheretedFromSurveyBase.resx">
+      <DependentUpon>201710101210067_SurveyAndSurveyTemplateEntitiesWereInheretedFromSurveyBase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

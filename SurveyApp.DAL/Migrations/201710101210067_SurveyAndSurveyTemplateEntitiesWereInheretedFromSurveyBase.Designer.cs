@@ -7,13 +7,13 @@ namespace SurveyApp.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitialSqlServerMigration : IMigrationMetadata
+    public sealed partial class SurveyAndSurveyTemplateEntitiesWereInheretedFromSurveyBase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialSqlServerMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(SurveyAndSurveyTemplateEntitiesWereInheretedFromSurveyBase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710100653429_InitialSqlServerMigration"; }
+            get { return "201710101210067_SurveyAndSurveyTemplateEntitiesWereInheretedFromSurveyBase"; }
         }
         
         string IMigrationMetadata.Source

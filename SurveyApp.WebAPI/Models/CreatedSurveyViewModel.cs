@@ -5,6 +5,8 @@ namespace SurveyApp.WebAPI.Models
 {
     public class CreatedSurveyViewModel
     {
+        public int Id { get; set; }
+
         [Required]
         public string CreatorId { get; set; }
 

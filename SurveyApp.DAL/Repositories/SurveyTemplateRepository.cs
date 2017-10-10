@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using SurveyApp.DAL.DataContext;
 using SurveyApp.DAL.EntityModels;
 using SurveyApp.DAL.Repositories.Interfaces;
@@ -11,9 +12,25 @@ namespace SurveyApp.DAL.Repositories
         {
         }
 
-        public async void CreateAsync(SurveyTemplateDataModel surveyTemplateToCreate)
+        public async void SaveAsync(SurveyTemplateDataModel surveyTemplateToCreate)
         {
-            context.SurveyTemplates.Add(surveyTemplateToCreate);
+            var alreadyCreatedSurvey = await context.SurveyTemplates.FindAsync(surveyTemplateToCreate.Id);
+            if (alreadyCreatedSurvey != null)
+            {
+                if (alreadyCreatedSurvey.CreatorId == surveyTemplateToCreate.CreatorId)
+                {
+                    context.SurveyTemplates.Attach(surveyTemplateToCreate);
+                }
+                else
+                {
+                    throw new AccessViolationException();
+                }
+            }
+            else
+            {
+                context.SurveyTemplates.Add(surveyTemplateToCreate);
+            }
+
             await context.SaveChangesAsync();
         }
 
