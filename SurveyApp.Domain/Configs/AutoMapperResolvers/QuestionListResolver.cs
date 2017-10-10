@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using SurveyApp.BLL.Models;
@@ -11,17 +12,22 @@ namespace SurveyApp.BLL.Configs.AutoMapperResolvers
         public ICollection<QuestionDataModel> Resolve(CreatedSurveyServiceModel source, SurveyDataModel destination, ICollection<QuestionDataModel> destMember,
             ResolutionContext context)
         {
-            List<QuestionDataModel> questions = (from question in
-                                                    from page in source.Pages
-                                                    select page.Questions
-                                                 select context.Mapper.Map<QuestionDataModel>(question))
-                                                 .ToList();
-
-            foreach (var question in questions)
+            var questions =  new List<QuestionDataModel>();
+            for (var pageIndex = 0; pageIndex < source.Pages.Length; pageIndex++)
             {
-                question.Survey = destination;
+                var sourcePage = source.Pages.ElementAt(pageIndex);
+                var destPage = destination.Pages.ElementAt(pageIndex);
+                foreach (var question in sourcePage.Questions)
+                {
+                    var questionDataModel = Mapper.Map<QuestionDataModel>(question);
+
+                    questionDataModel.Survey = destination;    
+                    questionDataModel.Page = destPage;
+
+                    questions.Add(questionDataModel);
+                }
             }
-            
+
             return questions;
         }
     }

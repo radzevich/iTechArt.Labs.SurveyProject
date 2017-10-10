@@ -10,7 +10,7 @@ namespace SurveyApp.DAL.EntityModels
         [StringLength(256)]
         public string Title { get; set; }
 
-        public int SurveId { get; set; }
+        public int SurveyId { get; set; }
         public SurveyDataModel Survey { get; set; }
 
         public virtual ICollection<QuestionDataModel> Questions { get; set; }

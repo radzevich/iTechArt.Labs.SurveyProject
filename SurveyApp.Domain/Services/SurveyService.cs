@@ -37,15 +37,15 @@ namespace SurveyApp.BLL.Services
 
             if (creatorProfile != null)
             {
+           
                 var surveyToCreateDataModel = Mapper.Map<SurveyDataModel>(surveyToCreate);
-                    
+               
                 surveyToCreateDataModel.Creator = creatorProfile;
                 surveyToCreateDataModel.Modifier = creatorProfile;
                 surveyToCreateDataModel.CreationTime = DateTime.Now;
                 surveyToCreateDataModel.ModificationTime = surveyToCreateDataModel.CreationTime;
 
                 _context.Surveys.Create(surveyToCreateDataModel);
-                await _context.SaveAsync();
             }
             else
             {

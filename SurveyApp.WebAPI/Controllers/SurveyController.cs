@@ -82,7 +82,7 @@ namespace SurveyApp.WebAPI.Controllers
         }
 
         [HttpPost]
-        [Route("create")]
+        [Route("save")]
         public async Task<HttpResponseMessage> CreateSurvey(CreatedSurveyViewModel surveyToCreateViewModel)
         {
             //if (await UserService.IsUserExists(surveyToCreateViewModel.CreatorId))
@@ -92,7 +92,6 @@ namespace SurveyApp.WebAPI.Controllers
                 CreatedSurveyServiceModel surveyToCreateServiceModel =
                     Mapper.Map<CreatedSurveyServiceModel>(surveyToCreateViewModel);
 
-                //TODO: Remove second parameter (surveyToCreateServiceModel) already contains creatoId.
                 OperationDetails result = await SurveyService.CreateAsync(surveyToCreateServiceModel);
                 if (!result.Succedeed)
                 {

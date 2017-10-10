@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using AutoMapper;
 using SurveyApp.BLL.Configs.AutoMapperResolvers;
 using SurveyApp.BLL.Models;
 using SurveyApp.BLL.Models.common;
@@ -13,7 +14,7 @@ namespace SurveyApp.BLL.Configs.AutoMapperProfiles
             CreateMap<AnswerServiceModel, AnswerDataModel>()
                 .ForMember(dest => dest.Question, opt => opt.Ignore())
                 .ForMember(dest => dest.QuestionId, opt => opt.Ignore());
-            CreateMap<AnswerDataModel, AnswerServiceModel>();
+            //CreateMap<AnswerDataModel, AnswerServiceModel>();
 
             CreateMap<QuestionServiceModel, QuestionDataModel>()
                 .ForMember(dest => dest.AnswerOptions, opt => opt.ResolveUsing<AnswerListResolver>())
@@ -22,14 +23,14 @@ namespace SurveyApp.BLL.Configs.AutoMapperProfiles
                 .ForMember(dest => dest.Page, opt => opt.Ignore())
                 .ForMember(dest => dest.PageId, opt => opt.Ignore())
                 .ForMember(dest => dest.ReceivedAnswers, opt => opt.Ignore());
-            CreateMap<QuestionDataModel, QuestionServiceModel>()
-                .ForMember(dest => dest.Answers, opt => opt.Ignore());
+            //CreateMap<QuestionDataModel, QuestionServiceModel>()
+            //    .ForMember(dest => dest.Answers, opt => opt.Ignore());
 
             CreateMap<PageServiceModel, PageDataModel>()
                 .ForMember(dest => dest.Questions, opt => opt.Ignore())
                 .ForMember(dest => dest.Survey, opt => opt.Ignore())
-                .ForMember(dest => dest.SurveId, opt => opt.Ignore());
-            CreateMap<PageDataModel, PageServiceModel>();
+                .ForMember(dest => dest.SurveyId, opt => opt.Ignore());
+            //CreateMap<PageDataModel, PageServiceModel>();
 
             //CreateMap<SurveyTemplateDataModel, SurveyServiceModel>();
             //CreateMap<SurveyDataModel, SurveyServiceModel>(MemberList.None);
@@ -43,8 +44,8 @@ namespace SurveyApp.BLL.Configs.AutoMapperProfiles
                 .ForMember(dest => dest.CreationTime, opt => opt.Ignore())
                 .ForMember(dest => dest.ModificationTime, opt => opt.Ignore())
                 .ForMember(dest => dest.CompletedSurveys, opt => opt.Ignore())
-                .ForMember(dest => dest.Pages, opt => opt.Ignore())
-                .ForMember(dest => dest.Questions, opt => opt.Ignore());
+                .ForMember(dest => dest.Pages, opt => opt.ResolveUsing<PageListResolver>())
+                .ForMember(dest => dest.Questions, opt => opt.ResolveUsing<QuestionListResolver>());
 
             //CreateMap<CreatedSurveyServiceModel, SurveyDataModel>()
             //    .ForMember(dest => dest.)

@@ -11,16 +11,15 @@ namespace SurveyApp.BLL.Configs.AutoMapperResolvers
         public ICollection<PageDataModel> Resolve(CreatedSurveyServiceModel source, SurveyDataModel destination, ICollection<PageDataModel> destMember,
             ResolutionContext context)
         {
-            ICollection<PageDataModel> surveyPages = (from pageServiceModel in source.Pages
-                                               select context.Mapper.Map<PageDataModel>(pageServiceModel))
-                                               .ToList();
-
-            foreach (var page in surveyPages)
+            var pages = new List<PageDataModel>();
+            foreach (var sourcePage in source.Pages)
             {
-                page.Survey = destination;
+                var pageDataModel = Mapper.Map<PageDataModel>(sourcePage);
+                pageDataModel.Survey = destination;
+                pages.Add(pageDataModel);          
             }
 
-            return surveyPages;
+            return pages;
         }
     }
 }

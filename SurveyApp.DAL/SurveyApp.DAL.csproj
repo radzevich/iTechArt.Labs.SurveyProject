@@ -77,6 +77,14 @@
   <ItemGroup>
     <Compile Include="EntityModels\SurveyTemplateDataModel.cs" />
     <Compile Include="Infrastructure\ApplicationContextFactory.cs" />
+    <Compile Include="Migrations\201710100653429_InitialSqlServerMigration.cs" />
+    <Compile Include="Migrations\201710100653429_InitialSqlServerMigration.Designer.cs">
+      <DependentUpon>201710100653429_InitialSqlServerMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710100656002_SurveIdColumnWasRenamedToSurveyIdInPagesTable.cs" />
+    <Compile Include="Migrations\201710100656002_SurveIdColumnWasRenamedToSurveyIdInPagesTable.Designer.cs">
+      <DependentUpon>201710100656002_SurveIdColumnWasRenamedToSurveyIdInPagesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\Interfaces\ISurveyRepository.cs" />
     <Compile Include="Repositories\Interfaces\ISurveyTemplateRepository.cs" />
     <Compile Include="Migrations\201708151405174_InitialCreate.cs" />
@@ -110,54 +118,6 @@
     <Compile Include="Migrations\201708161256130_Test.cs" />
     <Compile Include="Migrations\201708161256130_Test.Designer.cs">
       <DependentUpon>201708161256130_Test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709261052570_Identity user and user profile are mixed together.cs" />
-    <Compile Include="Migrations\201709261052570_Identity user and user profile are mixed together.Designer.cs">
-      <DependentUpon>201709261052570_Identity user and user profile are mixed together.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709261253576_IdFieldWassAddedToUserProfileTable.cs" />
-    <Compile Include="Migrations\201709261253576_IdFieldWassAddedToUserProfileTable.Designer.cs">
-      <DependentUpon>201709261253576_IdFieldWassAddedToUserProfileTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709261258432_IdWasRenamedInUserProfileTable.cs" />
-    <Compile Include="Migrations\201709261258432_IdWasRenamedInUserProfileTable.Designer.cs">
-      <DependentUpon>201709261258432_IdWasRenamedInUserProfileTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709261300355_NameWasRenamedToIdInUserProfileTable.cs" />
-    <Compile Include="Migrations\201709261300355_NameWasRenamedToIdInUserProfileTable.Designer.cs">
-      <DependentUpon>201709261300355_NameWasRenamedToIdInUserProfileTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709261301559_TempId1WasRenamedToNameInUserProfileTable.cs" />
-    <Compile Include="Migrations\201709261301559_TempId1WasRenamedToNameInUserProfileTable.Designer.cs">
-      <DependentUpon>201709261301559_TempId1WasRenamedToNameInUserProfileTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710021414550_TypeOfIdInSurveyTableChangedToInt.cs" />
-    <Compile Include="Migrations\201710021414550_TypeOfIdInSurveyTableChangedToInt.Designer.cs">
-      <DependentUpon>201710021414550_TypeOfIdInSurveyTableChangedToInt.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710021531470_OneToOneLinksInApplicationUserAndUserProfileMakedNotVirtual.cs" />
-    <Compile Include="Migrations\201710021531470_OneToOneLinksInApplicationUserAndUserProfileMakedNotVirtual.Designer.cs">
-      <DependentUpon>201710021531470_OneToOneLinksInApplicationUserAndUserProfileMakedNotVirtual.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710021539216_UserProfileRenamedToProfileInApplicationUserTable.cs" />
-    <Compile Include="Migrations\201710021539216_UserProfileRenamedToProfileInApplicationUserTable.Designer.cs">
-      <DependentUpon>201710021539216_UserProfileRenamedToProfileInApplicationUserTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710030948066_PageIdColumnWasAddedInQuestionTable.cs" />
-    <Compile Include="Migrations\201710030948066_PageIdColumnWasAddedInQuestionTable.Designer.cs">
-      <DependentUpon>201710030948066_PageIdColumnWasAddedInQuestionTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710030951276_OneToManyDependencyWasEstablishedBetweenSurveyAndPageEntities.cs" />
-    <Compile Include="Migrations\201710030951276_OneToManyDependencyWasEstablishedBetweenSurveyAndPageEntities.Designer.cs">
-      <DependentUpon>201710030951276_OneToManyDependencyWasEstablishedBetweenSurveyAndPageEntities.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710040829127_SurveyTemplatesTableWasAdded.cs" />
-    <Compile Include="Migrations\201710040829127_SurveyTemplatesTableWasAdded.Designer.cs">
-      <DependentUpon>201710040829127_SurveyTemplatesTableWasAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201710040831585_SurveyTemplatesColumnWasAddedToUserProfileTable.cs" />
-    <Compile Include="Migrations\201710040831585_SurveyTemplatesColumnWasAddedToUserProfileTable.Designer.cs">
-      <DependentUpon>201710040831585_SurveyTemplatesColumnWasAddedToUserProfileTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\Repository.cs" />
@@ -213,41 +173,11 @@
     <EmbeddedResource Include="Migrations\201708161256130_Test.resx">
       <DependentUpon>201708161256130_Test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709261052570_Identity user and user profile are mixed together.resx">
-      <DependentUpon>201709261052570_Identity user and user profile are mixed together.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710100653429_InitialSqlServerMigration.resx">
+      <DependentUpon>201710100653429_InitialSqlServerMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709261253576_IdFieldWassAddedToUserProfileTable.resx">
-      <DependentUpon>201709261253576_IdFieldWassAddedToUserProfileTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709261258432_IdWasRenamedInUserProfileTable.resx">
-      <DependentUpon>201709261258432_IdWasRenamedInUserProfileTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709261300355_NameWasRenamedToIdInUserProfileTable.resx">
-      <DependentUpon>201709261300355_NameWasRenamedToIdInUserProfileTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709261301559_TempId1WasRenamedToNameInUserProfileTable.resx">
-      <DependentUpon>201709261301559_TempId1WasRenamedToNameInUserProfileTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710021414550_TypeOfIdInSurveyTableChangedToInt.resx">
-      <DependentUpon>201710021414550_TypeOfIdInSurveyTableChangedToInt.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710021531470_OneToOneLinksInApplicationUserAndUserProfileMakedNotVirtual.resx">
-      <DependentUpon>201710021531470_OneToOneLinksInApplicationUserAndUserProfileMakedNotVirtual.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710021539216_UserProfileRenamedToProfileInApplicationUserTable.resx">
-      <DependentUpon>201710021539216_UserProfileRenamedToProfileInApplicationUserTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710030948066_PageIdColumnWasAddedInQuestionTable.resx">
-      <DependentUpon>201710030948066_PageIdColumnWasAddedInQuestionTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710030951276_OneToManyDependencyWasEstablishedBetweenSurveyAndPageEntities.resx">
-      <DependentUpon>201710030951276_OneToManyDependencyWasEstablishedBetweenSurveyAndPageEntities.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710040829127_SurveyTemplatesTableWasAdded.resx">
-      <DependentUpon>201710040829127_SurveyTemplatesTableWasAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710040831585_SurveyTemplatesColumnWasAddedToUserProfileTable.resx">
-      <DependentUpon>201710040831585_SurveyTemplatesColumnWasAddedToUserProfileTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201710100656002_SurveIdColumnWasRenamedToSurveyIdInPagesTable.resx">
+      <DependentUpon>201710100656002_SurveIdColumnWasRenamedToSurveyIdInPagesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

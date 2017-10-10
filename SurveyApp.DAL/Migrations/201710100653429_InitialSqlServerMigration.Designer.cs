@@ -7,13 +7,13 @@ namespace SurveyApp.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Identityuseranduserprofilearemixedtogether : IMigrationMetadata
+    public sealed partial class InitialSqlServerMigration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Identityuseranduserprofilearemixedtogether));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialSqlServerMigration));
         
         string IMigrationMetadata.Id
         {
-            get { return "201709261052570_Identity user and user profile are mixed together"; }
+            get { return "201710100653429_InitialSqlServerMigration"; }
         }
         
         string IMigrationMetadata.Source

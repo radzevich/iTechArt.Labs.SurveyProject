@@ -7,13 +7,13 @@ namespace SurveyApp.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class SurveyTemplatesColumnWasAddedToUserProfileTable : IMigrationMetadata
+    public sealed partial class SurveIdColumnWasRenamedToSurveyIdInPagesTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(SurveyTemplatesColumnWasAddedToUserProfileTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(SurveIdColumnWasRenamedToSurveyIdInPagesTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201710040831585_SurveyTemplatesColumnWasAddedToUserProfileTable"; }
+            get { return "201710100656002_SurveIdColumnWasRenamedToSurveyIdInPagesTable"; }
         }
         
         string IMigrationMetadata.Source
