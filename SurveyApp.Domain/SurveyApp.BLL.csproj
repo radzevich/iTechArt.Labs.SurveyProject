@@ -69,6 +69,7 @@
     <Compile Include="Configs\AutoMapperResolvers\AnswerListResolver.cs" />
     <Compile Include="Configs\AutoMapperResolvers\QuestionListResolver.cs" />
     <Compile Include="Configs\AutoMapperResolvers\PageListResolver.cs" />
+    <Compile Include="Configs\AutoMapperResolvers\SurveyResolver.cs" />
     <Compile Include="Infrastructure\OperationDetails.cs" />
     <Compile Include="Services\AuthenticatedUserService.cs" />
     <Compile Include="Services\Interfaces\IAuthenticatedUserService.cs" />

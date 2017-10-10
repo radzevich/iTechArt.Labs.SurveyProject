@@ -43,8 +43,11 @@ namespace SurveyApp.BLL.Configs.AutoMapperProfiles
                 .ForMember(dest => dest.CreationTime, opt => opt.Ignore())
                 .ForMember(dest => dest.ModificationTime, opt => opt.Ignore())
                 .ForMember(dest => dest.CompletedSurveys, opt => opt.Ignore())
-                .ForMember(dest => dest.Pages, opt => opt.ResolveUsing<PageListResolver>())
-                .ForMember(dest => dest.Questions, opt => opt.ResolveUsing<QuestionListResolver>());
+                .ForMember(dest => dest.Pages, opt => opt.Ignore())
+                .ForMember(dest => dest.Questions, opt => opt.Ignore());
+
+            //CreateMap<CreatedSurveyServiceModel, SurveyDataModel>()
+            //    .ForMember(dest => dest.)
         }
     }
 }

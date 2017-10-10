@@ -11,9 +11,7 @@ namespace SurveyApp.BLL.Configs.AutoMapperResolvers
         public ICollection<AnswerDataModel> Resolve(QuestionServiceModel source, QuestionDataModel destination, ICollection<AnswerDataModel> destMember,
             ResolutionContext context)
         {
-            List<AnswerDataModel> answersToQuestion = (from answer in source.Answers
-                                                       select context.Mapper.Map<AnswerDataModel>(answer))
-                                                       .ToList();
+            List<AnswerDataModel> answersToQuestion = Mapper.Map<List<AnswerDataModel>>(source.Answers);
 
             foreach (var answer in answersToQuestion)
             {

@@ -143,10 +143,6 @@
     <Compile Include="Migrations\201710021539216_UserProfileRenamedToProfileInApplicationUserTable.Designer.cs">
       <DependentUpon>201710021539216_UserProfileRenamedToProfileInApplicationUserTable.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201710030811172_SomeEntityodelsWereRenamed.cs" />
-    <Compile Include="Migrations\201710030811172_SomeEntityodelsWereRenamed.Designer.cs">
-      <DependentUpon>201710030811172_SomeEntityodelsWereRenamed.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201710030948066_PageIdColumnWasAddedInQuestionTable.cs" />
     <Compile Include="Migrations\201710030948066_PageIdColumnWasAddedInQuestionTable.Designer.cs">
       <DependentUpon>201710030948066_PageIdColumnWasAddedInQuestionTable.cs</DependentUpon>
@@ -240,9 +236,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710021539216_UserProfileRenamedToProfileInApplicationUserTable.resx">
       <DependentUpon>201710021539216_UserProfileRenamedToProfileInApplicationUserTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201710030811172_SomeEntityodelsWereRenamed.resx">
-      <DependentUpon>201710030811172_SomeEntityodelsWereRenamed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710030948066_PageIdColumnWasAddedInQuestionTable.resx">
       <DependentUpon>201710030948066_PageIdColumnWasAddedInQuestionTable.cs</DependentUpon>

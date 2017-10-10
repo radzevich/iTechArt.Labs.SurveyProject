@@ -93,7 +93,7 @@ namespace SurveyApp.WebAPI.Controllers
                     Mapper.Map<CreatedSurveyServiceModel>(surveyToCreateViewModel);
 
                 //TODO: Remove second parameter (surveyToCreateServiceModel) already contains creatoId.
-                OperationDetails result = await SurveyService.CreateAsync(surveyToCreateServiceModel, surveyToCreateViewModel.CreatorId);
+                OperationDetails result = await SurveyService.CreateAsync(surveyToCreateServiceModel);
                 if (!result.Succedeed)
                 {
                     return Request.CreateResponse(HttpStatusCode.NotModified);

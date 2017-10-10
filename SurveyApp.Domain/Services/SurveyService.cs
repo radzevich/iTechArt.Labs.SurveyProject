@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -27,10 +28,12 @@ namespace SurveyApp.BLL.Services
             _helper = new SurveyServiceHelper(_context);
         }      
 
-        public async Task<OperationDetails> CreateAsync(CreatedSurveyServiceModel surveyToCreate, string creatorName)
+        public async Task<OperationDetails> CreateAsync(CreatedSurveyServiceModel surveyToCreate)
         {
-            var creatorIdentinity = await _context.UserManager.FindByNameAsync(creatorName);
-            var creatorProfile = creatorIdentinity.Profile;
+            //var creatorIdentinity = await _context.UserManager.FindByNameAsync(surveyToCreate.CreatorId);
+            var creatorIdentity = _context.UserManager.Users.Include("Profile").FirstOrDefault();
+
+            var creatorProfile = creatorIdentity.Profile;
 
             if (creatorProfile != null)
             {

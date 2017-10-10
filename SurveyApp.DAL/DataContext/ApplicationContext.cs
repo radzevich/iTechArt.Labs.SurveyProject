@@ -13,13 +13,14 @@ namespace SurveyApp.DAL.DataContext
             Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ApplicationContext>()); 
         }
 
-        private ApplicationContext(string conectionString) : base(conectionString)
+        public ApplicationContext(string conectionString) : base(conectionString)
         {
         }
 
         public static ApplicationContext GetInstance(string connectionString)
         {
-            return _instance ?? (_instance = new ApplicationContext(connectionString));
+            //return _instance ?? (_instance = new ApplicationContext(connectionString));
+            return new ApplicationContext(connectionString);
         }
 
         public DbSet<UserProfile> ClientProfiles { get; set; }
