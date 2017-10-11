@@ -21,6 +21,7 @@ namespace SurveyApp.DAL.Repositories
             {
                 if (alreadyCreatedSurvey.CreatorId == surveyToSave.CreatorId)
                 {
+                    surveyToSave.ModificationTime = DateTime.Now;
                     context.Surveys.Attach(surveyToSave);
                 }
                 else
@@ -30,6 +31,9 @@ namespace SurveyApp.DAL.Repositories
             }
             else
             {
+                surveyToSave.CreationTime = DateTime.Now;
+                surveyToSave.ModificationTime = surveyToSave.CreationTime;
+
                 context.Surveys.Add(surveyToSave);
             }
 

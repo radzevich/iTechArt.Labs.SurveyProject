@@ -19,6 +19,7 @@ namespace SurveyApp.DAL.Repositories
             {
                 if (alreadyCreatedSurvey.CreatorId == surveyTemplateToCreate.CreatorId)
                 {
+                    surveyTemplateToCreate.ModificationTime = DateTime.Now;                  
                     context.SurveyTemplates.Attach(surveyTemplateToCreate);
                 }
                 else
@@ -28,6 +29,9 @@ namespace SurveyApp.DAL.Repositories
             }
             else
             {
+                surveyTemplateToCreate.CreationTime = DateTime.Now;
+                surveyTemplateToCreate.ModificationTime = surveyTemplateToCreate.CreationTime;
+
                 context.SurveyTemplates.Add(surveyTemplateToCreate);
             }
 

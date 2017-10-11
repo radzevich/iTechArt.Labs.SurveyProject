@@ -1,13 +1,17 @@
-﻿using SurveyApp.BLL.Models.common;
+﻿using System;
+using SurveyApp.BLL.Models.common;
 
 namespace SurveyApp.BLL.Models
 {
-    public class SurveyServiceModel
+    public class UploadSurveyServiceModel
     {
         public int Id { get; set; }
 
         public string Title { get; set; }
         public string CreatorId { get; set; }
+
+        public DateTime CreationTime { get; set; }
+        public DateTime ModificationTime { get; set; }
 
         public bool IsAnonymous { get; set; }
         public bool IsRandomQuestionOrder { get; set; }

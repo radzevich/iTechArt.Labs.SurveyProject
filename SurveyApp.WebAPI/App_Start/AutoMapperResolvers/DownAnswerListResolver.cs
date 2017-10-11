@@ -4,7 +4,7 @@ using SurveyApp.WebAPI.Models.common;
 
 namespace SurveyApp.WebAPI.AutoMapperResolvers
 {
-    public class AnswerListResolver : IValueResolver<QuestionViewModel, QuestionServiceModel, AnswerServiceModel[]>
+    public class DownAnswerListResolver : IValueResolver<QuestionViewModel, QuestionServiceModel, AnswerServiceModel[]>
     {
         public AnswerServiceModel[] Resolve(QuestionViewModel source, QuestionServiceModel destination, AnswerServiceModel[] destMember,
             ResolutionContext context)

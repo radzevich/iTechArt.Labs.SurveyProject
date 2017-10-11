@@ -7,9 +7,9 @@ using SurveyApp.DAL.EntityModels;
 
 namespace SurveyApp.BLL.Configs.AutoMapperResolvers
 {
-    public class QuestionListResolver : IValueResolver<SurveyServiceModel, SurveyBaseDataModel, ICollection<QuestionDataModel>>
+    public class DownQuestionListResolver : IValueResolver<DownloadSurveyServiceModel, SurveyBaseDataModel, ICollection<QuestionDataModel>>
     {
-        public ICollection<QuestionDataModel> Resolve(SurveyServiceModel source, SurveyBaseDataModel destination, ICollection<QuestionDataModel> destMember,
+        public ICollection<QuestionDataModel> Resolve(DownloadSurveyServiceModel source, SurveyBaseDataModel destination, ICollection<QuestionDataModel> destMember,
             ResolutionContext context)
         {
             var questions =  new List<QuestionDataModel>();

@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using AutoMapper;
 using SurveyApp.BLL.Models;
 using SurveyApp.DAL.EntityModels;
 
 namespace SurveyApp.BLL.Configs.AutoMapperResolvers
 {
-    public class PageListResolver : IValueResolver<SurveyServiceModel, SurveyBaseDataModel, ICollection<PageDataModel>>
+    public class DownPageListResolver : IValueResolver<DownloadSurveyServiceModel, SurveyBaseDataModel, ICollection<PageDataModel>>
     {
-        public ICollection<PageDataModel> Resolve(SurveyServiceModel source, SurveyBaseDataModel destination, ICollection<PageDataModel> destMember,
+        public ICollection<PageDataModel> Resolve(DownloadSurveyServiceModel source, SurveyBaseDataModel destination, ICollection<PageDataModel> destMember,
             ResolutionContext context)
         {
             var pages = new List<PageDataModel>();

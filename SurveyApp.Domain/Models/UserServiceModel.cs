@@ -9,6 +9,6 @@
         public string Name { get; set; }
         public string Role { get; set; }
 
-        public CreatedSurveyServiceModel[] CreatedSurveys { get; set; }
+        public DownloadSurveyServiceModel[] CreatedSurveys { get; set; }
     }
 }

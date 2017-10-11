@@ -64,15 +64,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configs\AutoMapperBLLConfiguration.cs" />
-    <Compile Include="Configs\AutoMapperProfiles\CreateSurveyProfile.cs" />
     <Compile Include="Configs\AutoMapperProfiles\SurveyCommonComponentsProfile.cs" />
     <Compile Include="Configs\AutoMapperProfiles\SurveyProfile.cs" />
-    <Compile Include="Configs\AutoMapperResolvers\AnswerServiceToDataResolver.cs" />
-    <Compile Include="Configs\AutoMapperResolvers\AnswerListResolver.cs" />
-    <Compile Include="Configs\AutoMapperResolvers\PageTemplateListResolver.cs" />
-    <Compile Include="Configs\AutoMapperResolvers\QuestionListResolver.cs" />
-    <Compile Include="Configs\AutoMapperResolvers\PageListResolver.cs" />
+    <Compile Include="Configs\AutoMapperResolvers\DownAnswerListResolver.cs" />
+    <Compile Include="Configs\AutoMapperResolvers\DownQuestionListResolver.cs" />
+    <Compile Include="Configs\AutoMapperResolvers\DownPageListResolver.cs" />
+    <Compile Include="Configs\AutoMapperResolvers\UpAnswerListResolver.cs" />
+    <Compile Include="Configs\AutoMapperResolvers\UpPageListResolver.cs" />
+    <Compile Include="Configs\AutoMapperResolvers\UpQuestionListResolver.cs" />
     <Compile Include="Infrastructure\OperationDetails.cs" />
+    <Compile Include="Models\UploadSurveyServiceModel.cs" />
     <Compile Include="Services\AuthenticatedUserService.cs" />
     <Compile Include="Services\Interfaces\IAuthenticatedUserService.cs" />
     <Compile Include="Services\Interfaces\IIdentityUserService.cs" />
@@ -80,9 +81,8 @@
     <Compile Include="Models\common\AnswerServiceModel.cs" />
     <Compile Include="Models\common\PageServiceModel.cs" />
     <Compile Include="Models\common\QuestionServiceModel.cs" />
-    <Compile Include="Models\SurveyServiceModel.cs" />
+    <Compile Include="Models\DownloadSurveyServiceModel.cs" />
     <Compile Include="Models\UserServiceModel.cs" />
-    <Compile Include="Models\CreatedSurveyServiceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\helpers\SurveyServiceHelper.cs" />
     <Compile Include="Services\IdentityUserService.cs" />

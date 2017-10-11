@@ -2,10 +2,11 @@
 
 namespace SurveyApp.BLL.Models
 {
-    public class CreatedSurveyServiceModel
+    public class DownloadSurveyServiceModel
     {
-        public string Title { get; set; }
+        public int Id { get; set; }
 
+        public string Title { get; set; }
         public string CreatorId { get; set; }
 
         public bool IsAnonymous { get; set; }

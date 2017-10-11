@@ -28,7 +28,7 @@ namespace SurveyApp.BLL.Services
             _helper = new SurveyServiceHelper(_context);
         }      
 
-        public async Task<OperationDetails> CreateAsync(SurveyServiceModel surveyToCreate)
+        public async Task<OperationDetails> CreateAsync(DownloadSurveyServiceModel surveyToCreate)
         {
             //var creatorIdentinity = await _context.UserManager.FindByNameAsync(surveyToCreate.CreatorId);
             var creatorIdentity = _context.UserManager.Users.Include("Profile").FirstOrDefault();
@@ -37,12 +37,8 @@ namespace SurveyApp.BLL.Services
             if (creatorProfile != null)
             {
            
-                var surveyToCreateDataModel = Mapper.Map<SurveyDataModel>(surveyToCreate);
-               
+                var surveyToCreateDataModel = Mapper.Map<SurveyDataModel>(surveyToCreate);             
                 surveyToCreateDataModel.Creator = creatorProfile;
-                surveyToCreateDataModel.Modifier = creatorProfile;
-                surveyToCreateDataModel.CreationTime = DateTime.Now;
-                surveyToCreateDataModel.ModificationTime = surveyToCreateDataModel.CreationTime;
 
                 await Task.Run(() => _context.Surveys.SaveAsync(surveyToCreateDataModel));
             }
@@ -54,7 +50,7 @@ namespace SurveyApp.BLL.Services
             return new OperationDetails(true, "", "");             
         }
 
-        public async Task<OperationDetails> UpdateAsync(SurveyServiceModel updatedSurvey, string modifierName)
+        public async Task<OperationDetails> UpdateAsync(DownloadSurveyServiceModel updatedSurvey, string modifierName)
         {
             var surveyDataModel = Mapper.Map<SurveyDataModel>(updatedSurvey);
 
@@ -72,8 +68,6 @@ namespace SurveyApp.BLL.Services
             }
 
             var surveyToUpdateDataModel = Mapper.Map<SurveyDataModel>(updatedSurvey);
-
-            surveyToUpdateDataModel.Modifier = modifierIdentinity.Profile;
             surveyToUpdateDataModel.ModificationTime = DateTime.Now;
                     
             _context.Surveys.SaveAsync(surveyDataModel);
@@ -100,7 +94,7 @@ namespace SurveyApp.BLL.Services
             return new OperationDetails(true, "", "");
         }
 
-        public async Task<OperationDetails> SaveAsTemplateAsync(SurveyServiceModel surveyToSaveAsTemplate)
+        public async Task<OperationDetails> SaveAsTemplateAsync(DownloadSurveyServiceModel surveyToSaveAsTemplate)
         {
             //var creatorIdentinity = await _context.UserManager.FindByNameAsync(surveyToCreate.CreatorId);
             var creatorIdentity = _context.UserManager.Users.Include("Profile").FirstOrDefault();
@@ -109,11 +103,7 @@ namespace SurveyApp.BLL.Services
             if (creatorProfile != null)
             {
                 var surveyToSaveAsTemplateDataModel = Mapper.Map<SurveyTemplateDataModel>(surveyToSaveAsTemplate);
-
                 surveyToSaveAsTemplateDataModel.Creator = creatorProfile;
-                surveyToSaveAsTemplateDataModel.Modifier = creatorProfile;
-                surveyToSaveAsTemplateDataModel.CreationTime = DateTime.Now;
-                surveyToSaveAsTemplateDataModel.ModificationTime = surveyToSaveAsTemplateDataModel.CreationTime;
 
                 await Task.Run(() => _context.SurveyTemplates.SaveAsync(surveyToSaveAsTemplateDataModel));
             }
@@ -125,24 +115,21 @@ namespace SurveyApp.BLL.Services
             return new OperationDetails(true, "", "");
         }
 
-        public IEnumerable<SurveyServiceModel> GetSurveysCreatedByUser(string ownerId)
+        public IEnumerable<UploadSurveyServiceModel> GetSurveysCreatedByUser(string ownerId)
         {
+            //TODO: remove expression.
+            ownerId = _context.UserManager.Users.FirstOrDefault()?.Id;
+
             IEnumerable<SurveyDataModel> userSurveys = _context.Surveys.GetSurveysByCreatorId(ownerId);
 
-            return new List<SurveyServiceModel>(
-                from survey in userSurveys
-                select Mapper.Map<SurveyServiceModel>(survey)
-            );  
+            return Mapper.Map<List<UploadSurveyServiceModel>>(userSurveys);
         }
 
-        public IEnumerable<SurveyServiceModel> GetSurveysTemplates(string ownerId)
+        public IEnumerable<UploadSurveyServiceModel> GetSurveysTemplates(string ownerId)
         {
             IEnumerable<SurveyTemplateDataModel> surveysTemplates = _context.SurveyTemplates.GetSurveyTemplatesByCreatorId(ownerId);
 
-            return new List<SurveyServiceModel>(
-                from survey in surveysTemplates
-                select Mapper.Map<SurveyServiceModel>(survey)
-            );
+            return Mapper.Map<List<UploadSurveyServiceModel>>(surveysTemplates);
         }
     }
 }

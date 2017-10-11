@@ -10,7 +10,6 @@ using AutoMapper;
 using SurveyApp.BLL.Infrastructure;
 using SurveyApp.BLL.Services.Interfaces;
 using SurveyApp.BLL.Models;
-using SurveyApp.BLL.Models.common;
 using SurveyApp.WebAPI.Models;
 
 namespace SurveyApp.WebAPI.Controllers
@@ -67,16 +66,15 @@ namespace SurveyApp.WebAPI.Controllers
         {
             string currentUserId = RequestContext.Principal.Identity.Name;
 
-            IEnumerable<SurveyServiceModel> surveysServiceModels = (templatesOnly)
+            IEnumerable<UploadSurveyServiceModel> surveysServiceModels = (templatesOnly)
                 ? SurveyService.GetSurveysTemplates(currentUserId)
                 : SurveyService.GetSurveysCreatedByUser(currentUserId);
 
-            IEnumerable<SurveyViewModel> surveysForUser = (from survey in surveysServiceModels
-                    select Mapper.Map<SurveyViewModel>(survey))
-                .ToList();
+            IEnumerable<SurveyViewModel> surveysForUser = Mapper.Map<IEnumerable<SurveyViewModel>>(surveysServiceModels);
+
             if (!surveysForUser.Any())
             {
-                return new List<SurveyViewModel>();
+                surveysForUser = new List<SurveyViewModel>();
             }
             return surveysForUser;
         }
@@ -89,7 +87,7 @@ namespace SurveyApp.WebAPI.Controllers
             //{
             try
             {
-                SurveyServiceModel surveyToCreateServiceModel = Mapper.Map<SurveyServiceModel>(surveyToCreateViewModel);
+                DownloadSurveyServiceModel surveyToCreateServiceModel = Mapper.Map<DownloadSurveyServiceModel>(surveyToCreateViewModel);
 
                 OperationDetails result = await SurveyService.CreateAsync(surveyToCreateServiceModel);
                 if (!result.Succedeed)
@@ -106,7 +104,7 @@ namespace SurveyApp.WebAPI.Controllers
             //}
             //else
             //{
-            //    throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.InternalServerError));
+            //    return new HttpResponseException(new HttpResponseMessage(HttpStatusCode.InternalServerError));
             //}
         }
 
@@ -115,7 +113,7 @@ namespace SurveyApp.WebAPI.Controllers
         public async Task<HttpResponseMessage> UpdateSurvey(CreatedSurveyViewModel surveyToUpdateViewModel)
         {
             string currentUserId = RequestContext.Principal.Identity.Name;
-            SurveyServiceModel surveyServiceModel = Mapper.Map<SurveyServiceModel>(surveyToUpdateViewModel);
+            DownloadSurveyServiceModel surveyServiceModel = Mapper.Map<DownloadSurveyServiceModel>(surveyToUpdateViewModel);
 
             OperationDetails result = await SurveyService.UpdateAsync(surveyServiceModel, currentUserId);
             if (!result.Succedeed)
@@ -150,7 +148,7 @@ namespace SurveyApp.WebAPI.Controllers
             //{
             try
             {
-                SurveyServiceModel surveyToCreateServiceModel = Mapper.Map<SurveyServiceModel>(surveyToSaveAsTemplate);
+                DownloadSurveyServiceModel surveyToCreateServiceModel = Mapper.Map<DownloadSurveyServiceModel>(surveyToSaveAsTemplate);
 
                 OperationDetails result = await SurveyService.SaveAsTemplateAsync(surveyToCreateServiceModel);
                 if (!result.Succedeed)
@@ -167,7 +165,7 @@ namespace SurveyApp.WebAPI.Controllers
             //}
             //else
             //{
-            //    throw new HttpResponseException(new HttpResponseMessage(HttpStatusCode.InternalServerError));
+            //    return new HttpResponseException(new HttpResponseMessage(HttpStatusCode.InternalServerError));
             //}
         }
     }

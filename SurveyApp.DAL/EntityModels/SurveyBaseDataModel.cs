@@ -13,7 +13,6 @@ namespace SurveyApp.DAL.EntityModels
         public string CreatorId { get; set; }
         public DateTime CreationTime { get; set; }
 
-        public string ModifierId { get; set; }
         public DateTime ModificationTime { get; set; }
 
         public bool IsAnonymous { get; set; }
@@ -27,7 +26,6 @@ namespace SurveyApp.DAL.EntityModels
         public virtual ICollection<QuestionDataModel> Questions { get; set; }
 
         public virtual UserProfile Creator { get; set; }
-        public virtual UserProfile Modifier { get; set; }
 
         protected SurveyBaseDataModel()
         {

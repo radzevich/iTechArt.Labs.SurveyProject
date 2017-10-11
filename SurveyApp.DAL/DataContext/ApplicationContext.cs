@@ -19,12 +19,11 @@ namespace SurveyApp.DAL.DataContext
 
         public static ApplicationContext GetInstance(string connectionString)
         {
-            //if (_instance == null)
-            //{
-            //    _instance = new ApplicationContext(connectionString);
-            //}
-            //return _instance;
-            return new ApplicationContext(connectionString);
+            if (_instance == null)
+            {
+                _instance = new ApplicationContext(connectionString);
+            }
+            return _instance;
         }
 
         public DbSet<UserProfile> ClientProfiles { get; set; }

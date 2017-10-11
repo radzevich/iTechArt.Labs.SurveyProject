@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using SurveyApp.WebAPI.Models.common;
 
 namespace SurveyApp.WebAPI.Models
@@ -9,6 +10,10 @@ namespace SurveyApp.WebAPI.Models
         public int Id { get; set; }
         [Required]
         public string Title { get; set; }
+
+        public string CreatorId { get; set; }
+        public DateTime CreationTime { get; set; }
+        public DateTime ModificationTime { get; set; }
 
         public bool IsAnonymous { get; set; }
         public bool IsRandomQuestionOrder { get; set; }

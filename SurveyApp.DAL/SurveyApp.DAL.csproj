@@ -82,6 +82,10 @@
     <Compile Include="Migrations\201710101210067_SurveyAndSurveyTemplateEntitiesWereInheretedFromSurveyBase.Designer.cs">
       <DependentUpon>201710101210067_SurveyAndSurveyTemplateEntitiesWereInheretedFromSurveyBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710101254393_ModifierDependencyWasRemovedFromSurveyBaseDataModel.cs" />
+    <Compile Include="Migrations\201710101254393_ModifierDependencyWasRemovedFromSurveyBaseDataModel.Designer.cs">
+      <DependentUpon>201710101254393_ModifierDependencyWasRemovedFromSurveyBaseDataModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\Interfaces\ISurveyRepository.cs" />
     <Compile Include="Repositories\Interfaces\ISurveyTemplateRepository.cs" />
     <Compile Include="Migrations\201708151405174_InitialCreate.cs" />
@@ -172,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710101210067_SurveyAndSurveyTemplateEntitiesWereInheretedFromSurveyBase.resx">
       <DependentUpon>201710101210067_SurveyAndSurveyTemplateEntitiesWereInheretedFromSurveyBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710101254393_ModifierDependencyWasRemovedFromSurveyBaseDataModel.resx">
+      <DependentUpon>201710101254393_ModifierDependencyWasRemovedFromSurveyBaseDataModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
